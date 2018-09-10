@@ -1,4 +1,4 @@
-package com.irootech.sundy;
+package com.summary.common;
 
 import org.junit.Test;
 
