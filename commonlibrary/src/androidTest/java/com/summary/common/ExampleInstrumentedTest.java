@@ -1,4 +1,4 @@
-package com.irootech.sundy;
+package com.summary.common;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.irootech.sundy", appContext.getPackageName());
+        assertEquals("com.irootech.common.test", appContext.getPackageName());
     }
 }
