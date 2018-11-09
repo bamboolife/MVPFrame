@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tab_text_normal">#212121</color>
+    <color name="colorItems">#524188</color>
+    <color name="colorBackground">#f8f8f8</color>
+    <color name="colorTitle">#FFFFFF</color>
+    <color name="colorTextBlack">#333333</color>
+    <color name="colorTextBlackLight">#636363</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorWhitePressed">#e8e8e8</color>
+
+    <color name="light_grey">#EFEFEF</color>
+    <!-- 浅灰色 -->
+    <color name="color_gray">#EDEDED</color>
+    <!-- 最浅浅灰色 -->
+    <color name="color_gray_a">#F5F5F5</color>
+    <!-- 中灰色 -->
+    <color name="color_medium_gray">#cdcdcd</color>
+    <!-- 深灰色 -->
+    <color name="color_grays">#999999</color>
+</resources>

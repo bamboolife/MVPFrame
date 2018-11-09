@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.irootech.network.test", appContext.getPackageName());
+        assertEquals("com.summary.network.test", appContext.getPackageName());
     }
 }

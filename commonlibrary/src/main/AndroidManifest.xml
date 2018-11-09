@@ -1,2 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.irootech.common" />
+    package="com.summary.common">
+
+    <application>
+        <service android:name=".service.FloatingService" />
+
+        <activity android:name=".base.BaseBindingActivity"></activity>
+    </application>
+
+</manifest>

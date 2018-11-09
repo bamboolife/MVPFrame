@@ -10,21 +10,96 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    dataBinding {
+        enabled = true
+    }
+//    signingConfigs {
+//        config {
+//            keyAlias 'irootech'
+//            keyPassword 'keyforcat'
+//            storeFile file('G:/MVPFrame/irootech.jks')
+//            storePassword 'keyforcat'
+//        }
+//    }
     buildTypes {
         release {
-            minifyEnabled false
+            //移除无用的resource资源
+            shrinkResources true
+            //混淆
+            minifyEnabled true
+            //zipAlign优化
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        debug{
+            //移除无用的resource资源
+            shrinkResources false
+            //混淆
+            minifyEnabled false
+            //zipAlign优化
+            zipAlignEnabled true
+        }
+    }
+    flavorDimensions 'store'
+    productFlavors{
+        // 线上环境
+        pro {
+            dimension 'store'
+            buildConfigField "String", "BASE_URL", project.BASE_URL_FORMAL
+        }
+
+        // 上线前的预览版本
+        pre {
+            dimension 'store'
+            buildConfigField "String", "BASE_URL", project.BASE_URL_PRE
+        }
+
+        //测试环境
+        beta {
+            dimension 'store'
+            buildConfigField "String", "BASE_URL",project.BASE_URL_BETA
+        }
+
+        // 开发阶段
+        dev {
+            dimension 'store'
+            buildConfigField "String", "BASE_URL", project.BASE_URL_DEV
+        }
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def formatedDate = new Date().format("yyyyMMddHHmm")
+            outputFileName = rootProject.getName() + "-" + buildType.name + "-v" + defaultConfig.versionName + "${formatedDate}.apk"
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
     }
 }
-
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:28.0.0-rc02'
+   // implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    //implementation 'com.android.support:support-v4:28.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':commonlibrary')
-    implementation project(':networklibrary')
+    //mvp
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.15'
+    //注解
+   // implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

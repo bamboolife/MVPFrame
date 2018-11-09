@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--跳转倒计时-->
+    <style name="def_countdown_circle_view">
+        <item name="circle_bg_color">#90000000</item>
+        <item name="circle_pb_color">#8ace00</item>
+        <item name="circle_pb_width">1dp</item>
+        <item name="circle_text_color">#ffffff</item>
+        <item name="circle_text_size">12sp</item>
+    </style>
+
+    <style name="BottomDialog"  parent="@android:style/Theme.Dialog">
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowAnimationStyle">@style/BottomDialog.AnimationStyle</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="BottomDialog.AnimationStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_to_bottom</item>
+    </style>
+</resources>
