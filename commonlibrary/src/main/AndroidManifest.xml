@@ -4,8 +4,6 @@
 
     <application>
         <service android:name=".service.FloatingService" />
-
-        <activity android:name=".base.BaseBindingActivity"></activity>
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     private Intent intent;
     protected FloatingService floatingService;
     private ServiceConnection connection;
-  //  Unbinder unbinder = null;
+    Unbinder unbinder = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +31,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         init(savedInstanceState);
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        ButterKnife.bind(this);
-        startFloatingService();
+        unbinder = ButterKnife.bind(this);
+       // startFloatingService();
         initData(getIntent().getExtras());
         initViews(savedInstanceState);
         initListeners();
@@ -96,19 +96,20 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus) {
-            startFloatingService();
-        } else {
-            stopFloatingService();
-        }
-    }
+//    @Override
+//    public void onWindowFocusChanged(boolean hasFocus) {
+//        super.onWindowFocusChanged(hasFocus);
+//        if (hasFocus) {
+//            startFloatingService();
+//        } else {
+//            stopFloatingService();
+//        }
+//    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-      //  unbinder.unbind();
+        if(unbinder!=null)
+        unbinder.unbind();
     }
 }
