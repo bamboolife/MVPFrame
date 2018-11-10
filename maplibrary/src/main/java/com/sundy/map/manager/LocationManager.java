@@ -13,10 +13,10 @@ import com.amap.api.location.AMapLocationListener;
  */
 public class LocationManager implements AMapLocationListener {
     //声明mLocationOption对象
-    public AMapLocationClientOption mLocationOption = null;
-    public AMapLocationClient mlocationClient = null;
+    private AMapLocationClientOption mLocationOption = null;
+    private AMapLocationClient mlocationClient = null;
     private Context mContext;
-
+    private OnLocationListener listener;
     public LocationManager(Context mContext) {
         this.mContext = mContext;
         initLocation();
@@ -65,6 +65,13 @@ public class LocationManager implements AMapLocationListener {
         mlocationClient.stopLocation();
     }
 
+    /**
+     * 設置定位回掉
+     * @param listener
+     */
+    public void setListener(OnLocationListener listener) {
+        this.listener = listener;
+    }
 
     @Override
     public void onLocationChanged(AMapLocation aMapLocation) {
@@ -73,10 +80,24 @@ public class LocationManager implements AMapLocationListener {
                 double latitude = aMapLocation.getLatitude();//获取纬度
                 double longitude = aMapLocation.getLongitude();//获取经度
                 String address=aMapLocation.getAddress();//获取地址
+                if (listener!=null){
+                    listener.onSucceed(aMapLocation);
+                }
             } else {
+                if (listener!=null){
+                    listener.onFailure(aMapLocation);
+                }
                 //显示错误信息ErrCode是错误码，errInfo是错误信息，详见错误码表。
                 Log.e("AmapError", "location Error, ErrCode:"+ aMapLocation.getErrorCode() + ", errInfo:" + aMapLocation.getErrorInfo());
             }
         }
+    }
+
+    /**
+     * 定義回調接口
+     */
+    public interface OnLocationListener{
+        public void onSucceed(AMapLocation aMapLocation);
+        public void onFailure(AMapLocation aMapLocation);
     }
 }
