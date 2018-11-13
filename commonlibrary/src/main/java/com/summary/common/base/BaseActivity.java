@@ -1,5 +1,6 @@
 package com.summary.common.base;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -21,6 +22,8 @@ import dagger.android.AndroidInjection;
  */
 public abstract class BaseActivity extends AppCompatActivity {
     private Intent intent;
+    protected Context mContext;
+    protected Activity mActivity;
     protected FloatingService floatingService;
     private ServiceConnection connection;
     Unbinder unbinder = null;
@@ -30,6 +33,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         AndroidInjection.inject(this);
         init(savedInstanceState);
         super.onCreate(savedInstanceState);
+        mContext=getApplicationContext();
+        mActivity=this;
         setContentView(getLayoutId());
         unbinder = ButterKnife.bind(this);
        // startFloatingService();
@@ -109,7 +114,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(unbinder!=null)
-        unbinder.unbind();
+        if(unbinder!=null) {
+            unbinder.unbind();
+        }
     }
 }

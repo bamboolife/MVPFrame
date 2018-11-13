@@ -10,7 +10,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +28,15 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.EditTextStyleActivity" />
+        <activity android:name=".ui.activity.XEditTextActivity" />
+        <activity
+            android:name=".ui.activity.CoordinatorActivity"
+            android:label="@string/title_activity_coordinator"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.activity.TitleBarActivity" />
+        <activity android:name=".ui.activity.PopupWindowActivity" />
+        <activity android:name=".ui.activity.WeiboPopupWindowActivity"></activity>
     </application>
 
 </manifest>

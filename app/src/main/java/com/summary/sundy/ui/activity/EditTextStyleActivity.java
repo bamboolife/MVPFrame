@@ -1,5 +1,4 @@
-package com.summary.sundy.ui.fragment;
-
+package com.summary.sundy.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,15 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.summary.common.base.BaseFragment;
+import com.summary.common.base.BaseActivity;
 import com.summary.common.view.itemdecoration.DividerItemDecoration;
-import com.summary.sundy.MainActivity;
 import com.summary.sundy.R;
-import com.summary.sundy.adapter.WidgetAdapter;
-import com.summary.sundy.model.WidgetModel;
-import com.summary.sundy.ui.activity.EditTextStyleActivity;
-import com.summary.sundy.ui.activity.PopupWindowActivity;
-import com.summary.sundy.ui.activity.TitleBarActivity;
+import com.summary.sundy.adapter.EditTextStyleAdapter;
+import com.summary.sundy.model.EditStyleModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,47 +20,45 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * 控件集合
+ * 各种样式的EditText
  */
-public class HomeFragment extends BaseFragment {
+public class EditTextStyleActivity extends BaseActivity {
     @BindView(R.id.rv_content)
     RecyclerView mRecyclerView;
-    WidgetAdapter adapter;
+    EditTextStyleAdapter adapter;
 
     @Override
     protected int getLayoutId() {
-        return R.layout.sy_home_widget_layout;
+        return R.layout.sy_edit_text_style_layout;
     }
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-       initRecyclerView();
+        initRecyclerView();
     }
 
     private void initRecyclerView() {
-        adapter=new WidgetAdapter(getData());
+        adapter = new EditTextStyleAdapter(getData());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.addItemDecoration(new DividerItemDecoration(mContext));
         mRecyclerView.setAdapter(adapter);
     }
 
-    private List<WidgetModel> getData() {
-        List<WidgetModel> widgetModels=new ArrayList<>();
-        widgetModels.add(new WidgetModel("TitleBar","各种样式的顶部titlebar",TitleBarActivity.class));
-        widgetModels.add(new WidgetModel("EditText","EditText的各种风格个自定义样式",EditTextStyleActivity.class));
-        widgetModels.add(new WidgetModel("PopupWindow","PopupWinodw的各种使用",PopupWindowActivity.class));
-        return widgetModels;
+    private List<EditStyleModel> getData() {
+        List<EditStyleModel> items = new ArrayList<>();
+        items.add(new EditStyleModel("XEditText", "XEditText的各种使用用例", XEditTextActivity.class));
+        return items;
     }
 
     @Override
-    protected void initListeners() {
+    public void initListeners() {
         super.initListeners();
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                WidgetModel model= (WidgetModel) adapter.getItem(position);
-                Intent intent=new Intent(mContext,model.activity);
+                EditStyleModel model = (EditStyleModel) adapter.getItem(position);
+                Intent intent = new Intent(mContext, model.activity);
                 startActivity(intent);
             }
         });

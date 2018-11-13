@@ -32,7 +32,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
-        debug{
+        debug {
             //移除无用的resource资源
             shrinkResources false
             //混淆
@@ -42,7 +42,7 @@ android {
         }
     }
     flavorDimensions 'store'
-    productFlavors{
+    productFlavors {
         // 线上环境
         pro {
             dimension 'store'
@@ -58,7 +58,7 @@ android {
         //测试环境
         beta {
             dimension 'store'
-            buildConfigField "String", "BASE_URL",project.BASE_URL_BETA
+            buildConfigField "String", "BASE_URL", project.BASE_URL_BETA
         }
 
         // 开发阶段
@@ -89,7 +89,7 @@ allprojects {
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-   // implementation 'com.android.support:appcompat-v7:28.0.0'
+    // implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     //implementation 'com.android.support:support-v4:28.0.0'
     testImplementation 'junit:junit:4.12'
@@ -100,6 +100,6 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.15'
     //注解
-   // implementation 'com.jakewharton:butterknife:8.8.1'
+    // implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
