@@ -5,6 +5,7 @@ import com.summary.sundy.ui.fragment.FindFragment;
 import com.summary.sundy.ui.fragment.HomeFragment;
 import com.summary.sundy.ui.fragment.MomentsFragment;
 import com.summary.sundy.ui.fragment.PersonFragment;
+import com.summary.sundy.ui.fragment.RxFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -22,4 +23,7 @@ public abstract class AllFragmentsModule {
 
     @ContributesAndroidInjector(modules = PersonFragmentModule.class)
     abstract PersonFragment contributePersonFragmentInjector();
+
+    @ContributesAndroidInjector(modules = RxFragmentModule.class)
+    abstract RxFragment contributeRxFragmentInjector();
 }

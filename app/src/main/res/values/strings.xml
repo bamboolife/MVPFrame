@@ -7,6 +7,7 @@
     <string name="tab_bar_text_home">Widget控件</string>
     <string name="tab_bar_text_moments">5.0Style布局</string>
     <string name="tab_bar_text_find">网络</string>
+    <string name="tab_bar_text_rx">RxJava</string>
     <string name="tab_bar_text_person">个人中心</string>
     <string name="title_activity_coordinator">CoordinatorActivity</string>
 </resources>

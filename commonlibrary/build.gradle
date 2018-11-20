@@ -47,6 +47,6 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
      //adapter
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
-
+    api 'com.facebook.rebound:rebound:0.3.8'
 
 }

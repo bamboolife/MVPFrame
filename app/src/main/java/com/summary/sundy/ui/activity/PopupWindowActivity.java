@@ -1,10 +1,13 @@
 package com.summary.sundy.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.summary.common.base.BaseActivity;
 import com.summary.common.view.itemdecoration.DividerItemDecoration;
 import com.summary.sundy.R;
@@ -40,8 +43,21 @@ public class PopupWindowActivity extends BaseActivity {
 
     private List<PopupModel> getData() {
         List<PopupModel> items=new ArrayList<>();
-        items.add(new PopupModel("WeiboPopupWindow","微博样式的popupwiondow",PopupWindowActivity.class));
+        items.add(new PopupModel("WeiboPopupWindow","微博样式的popupwiondow",WeiboPopupWindowActivity.class));
 
         return items;
+    }
+
+    @Override
+    public void initListeners() {
+        super.initListeners();
+        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                PopupModel model= (PopupModel) adapter.getItem(position);
+                Intent intent=new Intent(mContext,model.activity);
+                startActivity(intent);
+            }
+        });
     }
 }

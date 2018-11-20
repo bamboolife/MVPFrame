@@ -13,6 +13,7 @@ import com.summary.sundy.ui.fragment.FindFragment;
 import com.summary.sundy.ui.fragment.HomeFragment;
 import com.summary.sundy.ui.fragment.MomentsFragment;
 import com.summary.sundy.ui.fragment.PersonFragment;
+import com.summary.sundy.ui.fragment.RxFragment;
 
 import javax.inject.Inject;
 
@@ -33,14 +34,12 @@ public class MainActivity extends BaseActivity  {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-      //  ButterKnife.bind(this);
-        // logUtil.d("log_test", "这是一个测试。。。。。");
         //恢复选项状态
         mNavigateTabBar.onRestoreInstanceState(savedInstanceState);
-
         mNavigateTabBar.addTab(HomeFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_home, R.mipmap.ic_tab_bar_mine_selected, R.string.tab_bar_text_home));
         mNavigateTabBar.addTab(MomentsFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_moments, R.mipmap.ic_tab_bar_moments_selected, R.string.tab_bar_text_moments));
         mNavigateTabBar.addTab(FindFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_find, R.mipmap.ic_tab_bar_find_selected, R.string.tab_bar_text_find));
+        mNavigateTabBar.addTab(RxFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_find, R.mipmap.ic_tab_bar_find_selected, R.string.tab_bar_text_rx));
         mNavigateTabBar.addTab(PersonFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_person, R.mipmap.ic_tab_bar_person_selected, R.string.tab_bar_text_person));
     }
 

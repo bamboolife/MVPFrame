@@ -24,4 +24,18 @@
         <attr name="x_disableEmoji" format="boolean"/>
         <attr name="x_disableTogglePwdDrawable" format="boolean"/>
     </declare-styleable>
+
+    <declare-styleable name="BezierMoveView">
+        <attr name="bmvString" format="string" />
+        <attr name="bmvDimension" format="dimension" />
+        <attr name="bmvColor" format="color" />
+        <attr name="bmvDrawable" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="BezierWaveView">
+        <attr name="bwvString" format="string" />
+        <attr name="bwvWaveHeight" format="dimension" />
+        <attr name="bwvColor" format="color" />
+        <attr name="bwvDrawable" format="color|reference" />
+    </declare-styleable>
 </resources>

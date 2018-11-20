@@ -3,9 +3,11 @@ package com.summary.sundy.mvp.module.activity;
 import com.summary.sundy.MainActivity;
 import com.summary.sundy.mvp.component.activity.BaseActivityComponent;
 import com.summary.sundy.ui.activity.CoordinatorActivity;
+import com.summary.sundy.ui.activity.CustomViewActivity;
 import com.summary.sundy.ui.activity.EditTextStyleActivity;
 import com.summary.sundy.ui.activity.PopupWindowActivity;
 import com.summary.sundy.ui.activity.TitleBarActivity;
+import com.summary.sundy.ui.activity.WeiboPopupWindowActivity;
 import com.summary.sundy.ui.activity.XEditTextActivity;
 
 import dagger.Module;
@@ -31,4 +33,10 @@ public abstract class AllActivitysModule {
 
     @ContributesAndroidInjector(modules = PopupWindowActivityModule.class)
     abstract PopupWindowActivity contributePopupWindowActivityInjector();
+
+    @ContributesAndroidInjector(modules = WeiboPopupWindowActivityModule.class)
+    abstract WeiboPopupWindowActivity contributeWeiboPopupWindowActivityInjector();
+
+    @ContributesAndroidInjector(modules = CustomViewActivityModule.class)
+    abstract CustomViewActivity contributeCustomViewActivityInjector();
 }
