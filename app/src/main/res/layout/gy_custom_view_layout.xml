@@ -1,11 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.CustomViewActivity">
-<com.summary.common.view.bezier.BezierWaveView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
-</RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    >
+
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.summary.common.view.UISwitchButton
+                android:id="@+id/switch_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+            <com.summary.common.view.UISwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:sb_checked="true" />
+
+
+            <com.summary.common.view.UISwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:sb_checked="true"
+                app:sb_show_indicator="false" />
+
+            <com.summary.common.view.UISwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:sb_checked="true"
+                app:sb_checked_color="#fdc951" />
+
+            <com.summary.common.view.UISwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:sb_background="#FFF"
+                app:sb_button_color="#db99c7"
+                app:sb_checked_color="#A36F95"
+                app:sb_checkline_color="#a5dc88"
+                app:sb_shadow_color="#A36F95"
+                app:sb_uncheckcircle_color="#A36F95" />
+
+            <com.summary.common.view.UISwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:sb_enable_effect="false" />
+
+            <FrameLayout
+                android:id="@+id/flt"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:background="@color/colorAccent">
+
+                <ImageView
+                    android:id="@+id/iv_anim_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <com.summary.common.view.bezier.BezierWaveView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/ll_audit_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="3dp"
+            android:background="@android:color/darker_gray" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.summary.common.view.AuditProgressView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:apv_isCurrentComplete="true"
+                app:apv_isFirstStep="true"
+                app:apv_isLastStep="false"
+                app:apv_isNextComplete="false"
+                app:apv_stepCount="3"
+                app:apv_text="第一步" />
+
+            <com.summary.common.view.AuditProgressView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:apv_isCurrentComplete="false"
+                app:apv_isFirstStep="false"
+                app:apv_isLastStep="false"
+                app:apv_isNextComplete="false"
+                app:apv_stepCount="3"
+                app:apv_text="第二步" />
+
+            <com.summary.common.view.AuditProgressView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:apv_isCurrentComplete="false"
+                app:apv_isFirstStep="false"
+                app:apv_isLastStep="true"
+                app:apv_isNextComplete="false"
+                app:apv_stepCount="3"
+                app:apv_text="第三步" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

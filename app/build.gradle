@@ -57,6 +57,7 @@ android {
 
         //测试环境
         beta {
+            applicationId "com.summary.sundy"
             dimension 'store'
             buildConfigField "String", "BASE_URL", project.BASE_URL_BETA
         }
@@ -97,6 +98,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //mvp
     implementation project(':networklibrary')
+    implementation project(':uitabviewlibrary')
     annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.15'
     //注解

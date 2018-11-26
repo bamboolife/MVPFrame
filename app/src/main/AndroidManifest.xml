@@ -16,17 +16,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.VIEW" />-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.VIEW" /> -->
 
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-                <!--<category android:name="android.intent.category.BROWSABLE" />-->
 
-                <!--<data-->
-                    <!--android:host="www.caogen.com"-->
-                    <!--android:pathPattern="/login"-->
-                    <!--android:scheme="http" />-->
-            <!--</intent-filter>-->
+            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+
+
+            <!-- <data -->
+            <!-- android:host="www.caogen.com" -->
+            <!-- android:pathPattern="/login" -->
+            <!-- android:scheme="http" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".ui.activity.EditTextStyleActivity" />
         <activity android:name=".ui.activity.XEditTextActivity" />
@@ -37,7 +39,8 @@
         <activity android:name=".ui.activity.TitleBarActivity" />
         <activity android:name=".ui.activity.PopupWindowActivity" />
         <activity android:name=".ui.activity.WeiboPopupWindowActivity" />
-        <activity android:name=".ui.activity.CustomViewActivity"></activity>
+        <activity android:name=".ui.activity.CustomViewActivity" />
+        <activity android:name=".ui.activity.UITabViewActivity"></activity>
     </application>
 
 </manifest>

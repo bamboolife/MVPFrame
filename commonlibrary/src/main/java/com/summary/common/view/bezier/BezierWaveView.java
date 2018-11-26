@@ -41,7 +41,7 @@ public class BezierWaveView extends View {
         // Load attributes
         final TypedArray a = getContext().obtainStyledAttributes(
                 attrs, R.styleable.BezierWaveView, defStyle, 0);
-         waveHeight=a.getDimensionPixelOffset(R.styleable.BezierWaveView_bwvDimension,100);
+         waveHeight=a.getDimensionPixelOffset(R.styleable.BezierWaveView_bwvWaveHeight,100);
 //        mExampleString = a.getString(
 //                R.styleable.BezierWaveView_bwvString);
 //        mExampleColor = a.getColor(
