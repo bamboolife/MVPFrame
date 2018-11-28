@@ -22,4 +22,9 @@
         <item name="android:windowEnterAnimation">@anim/slide_in_from_bottom</item>
         <item name="android:windowExitAnimation">@anim/slide_out_to_bottom</item>
     </style>
+
+    <style name="ToastAnimation" parent="@android:style/Animation.Toast">
+        <!--<item name="android:windowEnterAnimation">@anim/toast_enter</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/toast_exit</item>-->
+    </style>
 </resources>

@@ -7,6 +7,7 @@ import com.summary.sundy.ui.activity.CustomViewActivity;
 import com.summary.sundy.ui.activity.EditTextStyleActivity;
 import com.summary.sundy.ui.activity.PopupWindowActivity;
 import com.summary.sundy.ui.activity.TitleBarActivity;
+import com.summary.sundy.ui.activity.ToastActivity;
 import com.summary.sundy.ui.activity.UITabViewActivity;
 import com.summary.sundy.ui.activity.WeiboPopupWindowActivity;
 import com.summary.sundy.ui.activity.XEditTextActivity;
@@ -43,4 +44,7 @@ public abstract class AllActivitysModule {
 
     @ContributesAndroidInjector(modules = UITabViewActivityModule.class)
     abstract UITabViewActivity contributeUITabViewActivityInjector();
+
+    @ContributesAndroidInjector(modules = ToastActivityModule.class)
+    abstract ToastActivity contributeToastActivityInjector();
 }
