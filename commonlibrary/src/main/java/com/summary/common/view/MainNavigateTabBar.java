@@ -1,5 +1,7 @@
 package com.summary.common.view;
 
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -126,7 +128,13 @@ public class MainNavigateTabBar extends LinearLayout implements View.OnClickList
         }
 
         if (tabParam.backgroundColor > 0) {
-            view.setBackgroundResource(tabParam.backgroundColor);
+            //view.setBackgroundResource(tabParam.backgroundColor);
+            GradientDrawable gradientDrawable=new GradientDrawable();
+            int colors[]={getContext().getResources().getColor(R.color.colorItems),R.color.tabcolor1};
+            gradientDrawable.setColors(colors);
+            gradientDrawable.setOrientation(GradientDrawable.Orientation.TOP_BOTTOM);
+          //  view.setBackgroundResource(R.color.colorItems);
+            view.setBackground(gradientDrawable);
         }
 
         if (tabParam.iconResId > 0) {

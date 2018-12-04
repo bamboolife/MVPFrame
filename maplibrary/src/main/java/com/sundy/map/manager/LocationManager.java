@@ -22,6 +22,7 @@ public class LocationManager implements AMapLocationListener {
         initLocation();
     }
 
+
     /**
      * 初始化地图定位
      */

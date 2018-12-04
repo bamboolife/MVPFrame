@@ -8,6 +8,10 @@
     <color name="colorTextBlackLight">#636363</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorWhitePressed">#e8e8e8</color>
+    <color name="tabcolor1">#333D5D</color>
+    <color name="tabcolor2">#323F63</color>
+
+    <color name="gray">#DEDEDE</color>
 
     <color name="light_grey">#EFEFEF</color>
     <!-- 浅灰色 -->

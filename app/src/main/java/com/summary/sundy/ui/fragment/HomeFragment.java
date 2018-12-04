@@ -21,6 +21,7 @@ import com.summary.sundy.ui.activity.PopupWindowActivity;
 import com.summary.sundy.ui.activity.TitleBarActivity;
 import com.summary.sundy.ui.activity.ToastActivity;
 import com.summary.sundy.ui.activity.UITabViewActivity;
+import com.summary.sundy.ui.activity.WebActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +62,8 @@ public class HomeFragment extends BaseFragment {
         widgetModels.add(new WidgetModel("自定义View","多种自定义view的方式",CustomViewActivity.class));
         widgetModels.add(new WidgetModel("UITabView","自定义UITabView",UITabViewActivity.class));
         widgetModels.add(new WidgetModel("Toast","可以修改样式的Toast",ToastActivity.class));
+        widgetModels.add(new WidgetModel("WebView","WebView的使用",WebActivity.class));
+        widgetModels.add(new WidgetModel("NavigationTabBar","底部导航控制器",WebActivity.class));
         return widgetModels;
     }
 

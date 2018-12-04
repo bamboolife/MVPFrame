@@ -29,6 +29,7 @@ public class XEditTextActivity extends BaseActivity {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
+
         customXEdit.setPattern(new int[]{4, 4, 4, 4});
         clearXEdit.setOnXTextChangeListener(new UIXEditText.OnXTextChangeListener() {
             @Override

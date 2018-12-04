@@ -41,7 +41,12 @@
         <activity android:name=".ui.activity.WeiboPopupWindowActivity" />
         <activity android:name=".ui.activity.CustomViewActivity" />
         <activity android:name=".ui.activity.UITabViewActivity" />
-        <activity android:name=".ui.activity.ToastActivity"></activity>
+        <activity android:name=".ui.activity.ToastActivity" />
+        <activity
+            android:name=".ui.activity.WebActivity"
+            android:label="@string/title_activity_web"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ui.activity.NavigationActivity"></activity>
     </application>
 
 </manifest>

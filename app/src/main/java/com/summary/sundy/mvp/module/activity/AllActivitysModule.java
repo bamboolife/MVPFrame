@@ -1,5 +1,6 @@
 package com.summary.sundy.mvp.module.activity;
 
+import com.summary.sundy.FrameMainLayoutActivity;
 import com.summary.sundy.MainActivity;
 import com.summary.sundy.mvp.component.activity.BaseActivityComponent;
 import com.summary.sundy.ui.activity.CoordinatorActivity;
@@ -9,6 +10,7 @@ import com.summary.sundy.ui.activity.PopupWindowActivity;
 import com.summary.sundy.ui.activity.TitleBarActivity;
 import com.summary.sundy.ui.activity.ToastActivity;
 import com.summary.sundy.ui.activity.UITabViewActivity;
+import com.summary.sundy.ui.activity.WebActivity;
 import com.summary.sundy.ui.activity.WeiboPopupWindowActivity;
 import com.summary.sundy.ui.activity.XEditTextActivity;
 
@@ -47,4 +49,9 @@ public abstract class AllActivitysModule {
 
     @ContributesAndroidInjector(modules = ToastActivityModule.class)
     abstract ToastActivity contributeToastActivityInjector();
+    @ContributesAndroidInjector(modules = FrameMainLayoutActivityModule.class)
+    abstract FrameMainLayoutActivity contributeFrameMainLayoutActivityInjector();
+
+    @ContributesAndroidInjector(modules = WebActivityModule.class)
+    abstract WebActivity contributeWebActivityInjector();
 }

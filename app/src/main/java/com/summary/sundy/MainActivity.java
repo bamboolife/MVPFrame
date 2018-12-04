@@ -1,5 +1,6 @@
 package com.summary.sundy;
 
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,6 +35,7 @@ public class MainActivity extends BaseActivity  {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
+
         //恢复选项状态
         mNavigateTabBar.onRestoreInstanceState(savedInstanceState);
         mNavigateTabBar.addTab(HomeFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_home, R.mipmap.ic_tab_bar_mine_selected, R.string.tab_bar_text_home));
@@ -41,6 +43,7 @@ public class MainActivity extends BaseActivity  {
         mNavigateTabBar.addTab(FindFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_find, R.mipmap.ic_tab_bar_find_selected, R.string.tab_bar_text_find));
         mNavigateTabBar.addTab(RxFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_find, R.mipmap.ic_tab_bar_find_selected, R.string.tab_bar_text_rx));
         mNavigateTabBar.addTab(PersonFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_person, R.mipmap.ic_tab_bar_person_selected, R.string.tab_bar_text_person));
+
     }
 
 

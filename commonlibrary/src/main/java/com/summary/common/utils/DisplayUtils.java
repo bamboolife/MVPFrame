@@ -2,6 +2,7 @@ package com.summary.common.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Point;
 import android.util.DisplayMetrics;
 
 public class DisplayUtils {
@@ -55,5 +56,10 @@ public class DisplayUtils {
 		return metric.heightPixels;
 	}
 
-
+	public static Point getScreenMetrics(Context context){
+		DisplayMetrics dm =context.getResources().getDisplayMetrics();
+		int w_screen = dm.widthPixels;
+		int h_screen = dm.heightPixels;
+		return new Point(w_screen, h_screen);
+	}
 }
