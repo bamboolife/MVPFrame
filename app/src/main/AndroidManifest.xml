@@ -46,7 +46,10 @@
             android:name=".ui.activity.WebActivity"
             android:label="@string/title_activity_web"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ui.activity.NavigationActivity"></activity>
+        <activity android:name=".ui.activity.NavigationActivity" />
+        <activity android:name=".ui.activity.NavigationStyleActivity" />
+        <activity android:name=".ui.activity.CalendarActivity" />
+        <activity android:name=".ui.activity.ProgressActivity"></activity>
     </application>
 
 </manifest>

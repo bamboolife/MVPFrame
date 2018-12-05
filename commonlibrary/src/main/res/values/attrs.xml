@@ -180,4 +180,10 @@
         <attr name="menu_title" format="string" />
         <attr name="icon" format="reference" />
     </declare-styleable>
+
+    <!--底部导航菜单-->
+    <declare-styleable name="NavMenuLayout">
+        <!--菜单个数-->
+        <attr name="menuCount" format="integer" />
+    </declare-styleable>
 </resources>

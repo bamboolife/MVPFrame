@@ -17,7 +17,9 @@ import com.summary.sundy.adapter.WidgetAdapter;
 import com.summary.sundy.model.WidgetModel;
 import com.summary.sundy.ui.activity.CustomViewActivity;
 import com.summary.sundy.ui.activity.EditTextStyleActivity;
+import com.summary.sundy.ui.activity.NavigationActivity;
 import com.summary.sundy.ui.activity.PopupWindowActivity;
+import com.summary.sundy.ui.activity.ProgressActivity;
 import com.summary.sundy.ui.activity.TitleBarActivity;
 import com.summary.sundy.ui.activity.ToastActivity;
 import com.summary.sundy.ui.activity.UITabViewActivity;
@@ -63,7 +65,8 @@ public class HomeFragment extends BaseFragment {
         widgetModels.add(new WidgetModel("UITabView","自定义UITabView",UITabViewActivity.class));
         widgetModels.add(new WidgetModel("Toast","可以修改样式的Toast",ToastActivity.class));
         widgetModels.add(new WidgetModel("WebView","WebView的使用",WebActivity.class));
-        widgetModels.add(new WidgetModel("NavigationTabBar","底部导航控制器",WebActivity.class));
+        widgetModels.add(new WidgetModel("NavigationTabBar","底部导航控制器",NavigationActivity.class));
+        widgetModels.add(new WidgetModel("Progress","各种样式的进度条",ProgressActivity.class));
         return widgetModels;
     }
 

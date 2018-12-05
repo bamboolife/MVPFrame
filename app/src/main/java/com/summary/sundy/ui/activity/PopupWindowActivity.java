@@ -39,7 +39,7 @@ public class PopupWindowActivity extends BaseActivity {
         initRecycleView();
     }
 
-    private void initRecycleView() {
+    public void initRecycleView() {
         adapter = new PopupStyleAdapter(getData());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -81,7 +81,7 @@ public class PopupWindowActivity extends BaseActivity {
                     startActivity(intent);
                 } else {
                     FloatMenu floatMenu = new FloatMenu(mActivity);
-                   // floatMenu.items("菜单1", "菜单2", "菜单3");
+                    // floatMenu.items("菜单1", "菜单2", "菜单3");
                     floatMenu.inflate(R.menu.popup_menu);
                     floatMenu.show(point);
                 }

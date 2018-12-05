@@ -3,10 +3,14 @@ package com.summary.sundy.mvp.module.activity;
 import com.summary.sundy.FrameMainLayoutActivity;
 import com.summary.sundy.MainActivity;
 import com.summary.sundy.mvp.component.activity.BaseActivityComponent;
+import com.summary.sundy.ui.activity.CalendarActivity;
 import com.summary.sundy.ui.activity.CoordinatorActivity;
 import com.summary.sundy.ui.activity.CustomViewActivity;
 import com.summary.sundy.ui.activity.EditTextStyleActivity;
+import com.summary.sundy.ui.activity.NavigationActivity;
+import com.summary.sundy.ui.activity.NavigationStyleActivity;
 import com.summary.sundy.ui.activity.PopupWindowActivity;
+import com.summary.sundy.ui.activity.ProgressActivity;
 import com.summary.sundy.ui.activity.TitleBarActivity;
 import com.summary.sundy.ui.activity.ToastActivity;
 import com.summary.sundy.ui.activity.UITabViewActivity;
@@ -54,4 +58,16 @@ public abstract class AllActivitysModule {
 
     @ContributesAndroidInjector(modules = WebActivityModule.class)
     abstract WebActivity contributeWebActivityInjector();
+
+    @ContributesAndroidInjector(modules = NavigationActivityModule.class)
+    abstract NavigationActivity contributeNavigationActivityInjector();
+
+    @ContributesAndroidInjector(modules = NavigationStyleActivityModule.class)
+    abstract NavigationStyleActivity contributeNavigationStyleActivityInjector();
+
+    @ContributesAndroidInjector(modules = CalendarActivityModule.class)
+    abstract CalendarActivity contributeCalendarActivityInjector();
+
+    @ContributesAndroidInjector(modules = ProgressActivityModule.class)
+    abstract ProgressActivity contributeProgressActivityInjector();
 }

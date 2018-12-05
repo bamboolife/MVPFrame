@@ -8,9 +8,13 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.summary.common.service.FloatingService;
+import com.summary.common.view.itemdecoration.DividerItemDecoration;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -26,6 +30,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected Activity mActivity;
     protected FloatingService floatingService;
     private ServiceConnection connection;
+    protected RecyclerView mRecyclerView;
     Unbinder unbinder = null;
 
     @Override
@@ -33,11 +38,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         AndroidInjection.inject(this);
         init(savedInstanceState);
         super.onCreate(savedInstanceState);
-        mContext=getApplicationContext();
-        mActivity=this;
+        mContext = getApplicationContext();
+        mActivity = this;
         setContentView(getLayoutId());
         unbinder = ButterKnife.bind(this);
-       // startFloatingService();
+        // startFloatingService();
         initData(getIntent().getExtras());
         initViews(savedInstanceState);
         initListeners();
@@ -114,7 +119,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(unbinder!=null) {
+        if (unbinder != null) {
             unbinder.unbind();
         }
     }

@@ -13,6 +13,9 @@
 
     <color name="gray">#DEDEDE</color>
 
+    <color name="progress_nomal">#00B184</color>
+    <color name="progress_select">#E6E6E6</color>
+
     <color name="light_grey">#EFEFEF</color>
     <!-- 浅灰色 -->
     <color name="color_gray">#EDEDED</color>

@@ -2,5 +2,10 @@
 <resources>
 
     <item name="toast_main_text_view_id" type="id" />
+    <item name="slide_left" type="id" />
+    <item name="slide_right" type="id" />
+    <item name="tv_salary_left" type="id" />
+    <item name="tv_salary_right" type="id" />
+    <item name="view_progress" type="id" />
 
 </resources>
