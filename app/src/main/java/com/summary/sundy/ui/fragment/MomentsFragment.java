@@ -12,10 +12,8 @@ import com.summary.common.base.BaseFragment;
 import com.summary.common.view.itemdecoration.DividerItemDecoration;
 import com.summary.sundy.R;
 import com.summary.sundy.adapter.LayoutAdapter;
-import com.summary.sundy.adapter.WidgetAdapter;
-import com.summary.sundy.model.LayoutModel;
+import com.summary.sundy.model.WidgetModel;
 import com.summary.sundy.ui.activity.CoordinatorActivity;
-import com.summary.sundy.ui.activity.EditTextStyleActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,9 +42,10 @@ public class MomentsFragment extends BaseFragment {
         mRecyclerView.setAdapter(adapter);
     }
 
-    private List<LayoutModel> getdata() {
-        List<LayoutModel> items=new ArrayList<>();
-        items.add(new LayoutModel("CoordinatorLayout","CoordinatorLayout布局各种的使用",CoordinatorActivity.class));
+    private List<WidgetModel> getdata() {
+        List<WidgetModel> items=new ArrayList<>();
+        items.add(new WidgetModel("CoordinatorLayout","CoordinatorLayout布局各种的使用",CoordinatorActivity.class));
+        items.add(new WidgetModel("VLayout","Vlayout的使用",CoordinatorActivity.class));
         return items;
     }
 
@@ -56,7 +55,7 @@ public class MomentsFragment extends BaseFragment {
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                LayoutModel model= (LayoutModel) adapter.getItem(position);
+                WidgetModel model= (WidgetModel) adapter.getItem(position);
                 Intent intent=new Intent(mContext,model.activity);
                 startActivity(intent);
             }

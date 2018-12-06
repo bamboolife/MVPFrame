@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -15,8 +16,8 @@ import com.summary.sundy.R;
 import butterknife.BindView;
 
 public class WebActivity extends BaseActivity {
-    @BindView(R.id.webview)
-    WebView mWebView;
+    @BindView(R.id.rv_content)
+    RecyclerView mRecyclerView;
 
     @Override
     protected int getLayoutId() {
@@ -25,9 +26,11 @@ public class WebActivity extends BaseActivity {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-        WebSettings mWebSettings = mWebView.getSettings();
-        mWebSettings.setJavaScriptEnabled(true);
-        mWebView.loadUrl("file:///android_asset/login.html");
+      initRecyclerView();
+    }
+
+    private void initRecyclerView() {
+
     }
 
 }

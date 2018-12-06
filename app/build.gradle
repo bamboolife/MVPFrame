@@ -98,6 +98,7 @@ dependencies {
     //mvp
     implementation project(':networklibrary')
     implementation project(':uitabviewlibrary')
+    implementation project(':agentweb')
     annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.15'
     //注解

@@ -11,6 +11,7 @@ import com.summary.sundy.ui.activity.NavigationActivity;
 import com.summary.sundy.ui.activity.NavigationStyleActivity;
 import com.summary.sundy.ui.activity.PopupWindowActivity;
 import com.summary.sundy.ui.activity.ProgressActivity;
+import com.summary.sundy.ui.activity.ShopWidgetActivity;
 import com.summary.sundy.ui.activity.TitleBarActivity;
 import com.summary.sundy.ui.activity.ToastActivity;
 import com.summary.sundy.ui.activity.UITabViewActivity;
@@ -70,4 +71,7 @@ public abstract class AllActivitysModule {
 
     @ContributesAndroidInjector(modules = ProgressActivityModule.class)
     abstract ProgressActivity contributeProgressActivityInjector();
+
+    @ContributesAndroidInjector(modules = ShopWidgetActivityModule.class)
+    abstract ShopWidgetActivity contributeShopWidgetActivityInjector();
 }

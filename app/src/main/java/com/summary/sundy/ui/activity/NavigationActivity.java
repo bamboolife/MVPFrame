@@ -12,7 +12,8 @@ import com.summary.common.base.BaseActivity;
 import com.summary.common.view.itemdecoration.DividerItemDecoration;
 import com.summary.sundy.R;
 import com.summary.sundy.adapter.NavigationAdapter;
-import com.summary.sundy.model.NavigationModel;
+import com.summary.sundy.model.WidgetModel;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,12 +46,12 @@ public class NavigationActivity extends BaseActivity {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    private List<NavigationModel> getData() {
-        List<NavigationModel> items = new ArrayList<>();
-        items.add(new NavigationModel("TabBar style1", "底部控制器实现方式1", NavigationStyleActivity.class));
-        items.add(new NavigationModel("TabBar style2", "底部控制器实现方式2", NavigationActivity.class));
-        items.add(new NavigationModel("TabBar style3", "底部控制器实现方式3", NavigationActivity.class));
-        items.add(new NavigationModel("TabBar style4", "底部控制器实现方式4", NavigationActivity.class));
+    private List<WidgetModel> getData() {
+        List<WidgetModel> items = new ArrayList<>();
+        items.add(new WidgetModel("TabBar style1", "底部控制器实现方式1", NavigationStyleActivity.class));
+        items.add(new WidgetModel("TabBar style2", "底部控制器实现方式2", NavigationActivity.class));
+        items.add(new WidgetModel("TabBar style3", "底部控制器实现方式3", NavigationActivity.class));
+        items.add(new WidgetModel("TabBar style4", "底部控制器实现方式4", NavigationActivity.class));
 
         return items;
     }
@@ -61,7 +62,7 @@ public class NavigationActivity extends BaseActivity {
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                NavigationModel model= (NavigationModel) adapter.getItem(position);
+                WidgetModel model= (WidgetModel) adapter.getItem(position);
                 Intent intent=new Intent(mContext,model.activity);
                 startActivity(intent);
             }

@@ -16,7 +16,8 @@ import com.summary.common.view.FloatMenu;
 import com.summary.common.view.itemdecoration.DividerItemDecoration;
 import com.summary.sundy.R;
 import com.summary.sundy.adapter.PopupStyleAdapter;
-import com.summary.sundy.model.PopupModel;
+import com.summary.sundy.model.WidgetModel;
+import com.summary.sundy.model.WidgetModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,24 +48,24 @@ public class PopupWindowActivity extends BaseActivity {
         mRecyclerView.setAdapter(adapter);
     }
 
-    private List<PopupModel> getData() {
-        List<PopupModel> items = new ArrayList<>();
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
-        items.add(new PopupModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+    private List<WidgetModel> getData() {
+        List<WidgetModel> items = new ArrayList<>();
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
+        items.add(new WidgetModel("WeiboPopupWindow", "微博样式的popupwiondow", WeiboPopupWindowActivity.class));
 
         return items;
     }
@@ -76,7 +77,7 @@ public class PopupWindowActivity extends BaseActivity {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 if (position == 0) {
-                    PopupModel model = (PopupModel) adapter.getItem(position);
+                    WidgetModel model = (WidgetModel) adapter.getItem(position);
                     Intent intent = new Intent(mContext, model.activity);
                     startActivity(intent);
                 } else {

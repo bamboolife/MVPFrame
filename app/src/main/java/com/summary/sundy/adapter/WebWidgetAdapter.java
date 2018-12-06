@@ -10,11 +10,12 @@ import com.summary.sundy.model.WidgetModel;
 import java.util.List;
 
 /**
- * EditText适配器
+ * 树根互联科技有限公司
+ * Created by sundy.jiang on 2018/12/6.
  */
-public class EditTextStyleAdapter extends BaseQuickAdapter<WidgetModel,BaseViewHolder> {
+public class WebWidgetAdapter extends BaseQuickAdapter<WidgetModel,BaseViewHolder> {
 
-    public EditTextStyleAdapter(@Nullable List<WidgetModel> data) {
+    public WebWidgetAdapter(@Nullable List<WidgetModel> data) {
         super(R.layout.sy_widget_item_layout, data);
     }
 

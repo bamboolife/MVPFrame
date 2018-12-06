@@ -1,1 +1,1 @@
-include ':app', ':commonlibrary', ':networklibrary', ':uitabviewlibrary', ':maplibrary'
+include ':app', ':commonlibrary', ':networklibrary', ':uitabviewlibrary', ':maplibrary', ':agentweb'

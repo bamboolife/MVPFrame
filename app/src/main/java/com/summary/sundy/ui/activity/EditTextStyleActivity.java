@@ -12,7 +12,8 @@ import com.summary.common.base.BaseActivity;
 import com.summary.common.view.itemdecoration.DividerItemDecoration;
 import com.summary.sundy.R;
 import com.summary.sundy.adapter.EditTextStyleAdapter;
-import com.summary.sundy.model.EditStyleModel;
+import com.summary.sundy.model.WidgetModel;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,9 +46,9 @@ public class EditTextStyleActivity extends BaseActivity {
         mRecyclerView.setAdapter(adapter);
     }
 
-    private List<EditStyleModel> getData() {
-        List<EditStyleModel> items = new ArrayList<>();
-        items.add(new EditStyleModel("XEditText", "XEditText的各种使用用例", XEditTextActivity.class));
+    private List<WidgetModel> getData() {
+        List<WidgetModel> items = new ArrayList<>();
+        items.add(new WidgetModel("XEditText", "XEditText的各种使用用例", XEditTextActivity.class));
         return items;
     }
 
@@ -57,7 +58,7 @@ public class EditTextStyleActivity extends BaseActivity {
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                EditStyleModel model = (EditStyleModel) adapter.getItem(position);
+                WidgetModel model = (WidgetModel) adapter.getItem(position);
                 Intent intent = new Intent(mContext, model.activity);
                 startActivity(intent);
             }

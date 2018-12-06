@@ -5,18 +5,18 @@ import android.support.annotation.Nullable;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.summary.sundy.R;
-import com.summary.sundy.model.PopupModel;
+import com.summary.sundy.model.WidgetModel;
 
 import java.util.List;
 
-public class PopupStyleAdapter extends BaseQuickAdapter<PopupModel,BaseViewHolder> {
-    public PopupStyleAdapter( @Nullable List<PopupModel> data) {
-        super(R.layout.sy_popup_window_item_layout, data);
+public class PopupStyleAdapter extends BaseQuickAdapter<WidgetModel,BaseViewHolder> {
+    public PopupStyleAdapter( @Nullable List<WidgetModel> data) {
+        super(R.layout.sy_widget_item_layout, data);
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, PopupModel item) {
-        helper.setText(R.id.tv_popup_name,item.title);
-        helper.setText(R.id.tv_popup_des,item.content);
+    protected void convert(BaseViewHolder helper, WidgetModel item) {
+        helper.setText(R.id.tv_widget_name, item.title);
+        helper.setText(R.id.tv_widget_des, item.content);
     }
 }
