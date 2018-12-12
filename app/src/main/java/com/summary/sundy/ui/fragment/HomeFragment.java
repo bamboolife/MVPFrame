@@ -11,7 +11,6 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.summary.common.base.BaseFragment;
 import com.summary.common.view.itemdecoration.DividerItemDecoration;
-import com.summary.sundy.MainActivity;
 import com.summary.sundy.R;
 import com.summary.sundy.adapter.WidgetAdapter;
 import com.summary.sundy.model.WidgetModel;

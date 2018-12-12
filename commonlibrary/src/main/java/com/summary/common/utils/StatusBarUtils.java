@@ -5,9 +5,6 @@ import android.os.Build;
 
 import java.lang.reflect.Method;
 
-/**
- * Created by abner on 2016/7/24.
- */
 public class StatusBarUtils {
 
     /**
