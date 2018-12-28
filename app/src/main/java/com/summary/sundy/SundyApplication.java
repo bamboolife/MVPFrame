@@ -4,6 +4,8 @@ import com.summary.common.base.BaseApplication;
 import com.summary.common.utils.toast.ToastUtils;
 import com.summary.sundy.mvp.component.DaggerAppComponent;
 
+import okhttp3.internal.http.HttpHeaders;
+
 public class SundyApplication extends BaseApplication {
 
 
@@ -13,6 +15,8 @@ public class SundyApplication extends BaseApplication {
         DaggerAppComponent.create().inject(this);
         ToastUtils.init(this);
         initWebView();
+
+
     }
 
     /**

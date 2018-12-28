@@ -49,7 +49,7 @@ public class NavigationActivity extends BaseActivity {
     private List<WidgetModel> getData() {
         List<WidgetModel> items = new ArrayList<>();
         items.add(new WidgetModel("TabBar style1", "底部控制器实现方式1", NavigationStyleActivity.class));
-        items.add(new WidgetModel("TabBar style2", "底部控制器实现方式2", NavigationActivity.class));
+        items.add(new WidgetModel("TabBar style2", "底部控制器实现方式2", NavigationStyle2Activity.class));
         items.add(new WidgetModel("TabBar style3", "底部控制器实现方式3", NavigationActivity.class));
         items.add(new WidgetModel("TabBar style4", "底部控制器实现方式4", NavigationActivity.class));
 

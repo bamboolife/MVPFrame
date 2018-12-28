@@ -2,15 +2,21 @@ package com.summary.sundy.ui.activity;
 
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.summary.common.base.BaseActivity;
+import com.summary.common.utils.phonemask.PhoneMaskManager;
+import com.summary.common.utils.phonemask.ValueListener;
 import com.summary.common.view.UIXEditText;
 import com.summary.sundy.R;
 
 import butterknife.BindView;
 
 public class XEditTextActivity extends BaseActivity {
+    @BindView(R.id.text_edit_text)
+    EditText defaultText;
     @BindView(R.id.clear_marker_edit_text)
     UIXEditText clearXEdit;
     @BindView(R.id.custom_edit_text)
@@ -29,7 +35,16 @@ public class XEditTextActivity extends BaseActivity {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-
+        new PhoneMaskManager()
+                .withMask(" (###) ###-##-##")
+                .withRegion("+7")
+                .withValueListener(new ValueListener() {
+                    @Override
+                    public void onPhoneChanged(String phone) {
+                        Log.i("log_text", "onPhoneChanged: phone=" + phone);
+                    }
+                })
+                .bindTo(defaultText);
         customXEdit.setPattern(new int[]{4, 4, 4, 4});
         clearXEdit.setOnXTextChangeListener(new UIXEditText.OnXTextChangeListener() {
             @Override
@@ -64,6 +79,6 @@ public class XEditTextActivity extends BaseActivity {
             }
         });
         showXEdit.setSeparator(" ");
-        showXEdit.setPattern(new int[]{3,4,4});
+        showXEdit.setPattern(new int[]{3, 4, 4});
     }
 }

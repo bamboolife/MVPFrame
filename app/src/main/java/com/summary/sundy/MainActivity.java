@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.amap.api.location.AMapLocation;
 import com.summary.common.base.BaseActivity;
 import com.summary.common.service.FloatingService;
 import com.summary.common.utils.LogUtil;
@@ -16,7 +15,6 @@ import com.summary.sundy.ui.fragment.HomeFragment;
 import com.summary.sundy.ui.fragment.MomentsFragment;
 import com.summary.sundy.ui.fragment.PersonFragment;
 import com.summary.sundy.ui.fragment.RxFragment;
-import com.sundy.map.manager.LocationManager;
 import com.yanzhenjie.permission.Permission;
 
 import javax.inject.Inject;
@@ -26,7 +24,6 @@ import butterknife.BindView;
 public class MainActivity extends BaseActivity  {
    @BindView(R.id.navigateTabBar)
     MainNavigateTabBar mNavigateTabBar;
-    LocationManager mLocationManager;
     @Inject
     LogUtil logUtil;
 
@@ -39,7 +36,6 @@ public class MainActivity extends BaseActivity  {
     @Override
     protected void initViews(Bundle savedInstanceState) {
         RequestPermissionUtil.requestPermission(mContext,Permission.ACCESS_FINE_LOCATION);
-         mLocationManager=new LocationManager(mContext);
         //恢复选项状态
         mNavigateTabBar.onRestoreInstanceState(savedInstanceState);
         mNavigateTabBar.addTab(HomeFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_home, R.mipmap.ic_tab_bar_mine_selected, R.string.tab_bar_text_home));
@@ -47,17 +43,6 @@ public class MainActivity extends BaseActivity  {
         mNavigateTabBar.addTab(FindFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_find, R.mipmap.ic_tab_bar_find_selected, R.string.tab_bar_text_find));
         mNavigateTabBar.addTab(RxFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_find, R.mipmap.ic_tab_bar_find_selected, R.string.tab_bar_text_rx));
         mNavigateTabBar.addTab(PersonFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_person, R.mipmap.ic_tab_bar_person_selected, R.string.tab_bar_text_person));
-        mLocationManager.startLocation(new LocationManager.OnLocationListener() {
-            @Override
-            public void onSucceed(AMapLocation aMapLocation) {
-                Log.i("log_map", "onSucceed: ="+ aMapLocation.getAddress());
-            }
-
-            @Override
-            public void onFailure(AMapLocation aMapLocation) {
-                Log.i("log_map", "location Error, ErrCode:"+ aMapLocation.getErrorCode() + ", errInfo:" + aMapLocation.getErrorInfo());
-            }
-        });
     }
 
 

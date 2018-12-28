@@ -7,11 +7,16 @@ import com.summary.sundy.ui.activity.CalendarActivity;
 import com.summary.sundy.ui.activity.CoordinatorActivity;
 import com.summary.sundy.ui.activity.CustomViewActivity;
 import com.summary.sundy.ui.activity.EditTextStyleActivity;
+import com.summary.sundy.ui.activity.InputLayoutActivity;
 import com.summary.sundy.ui.activity.NavigationActivity;
+import com.summary.sundy.ui.activity.NavigationStyle2Activity;
 import com.summary.sundy.ui.activity.NavigationStyleActivity;
+import com.summary.sundy.ui.activity.OperatorsActivity;
 import com.summary.sundy.ui.activity.PopupWindowActivity;
 import com.summary.sundy.ui.activity.ProgressActivity;
+import com.summary.sundy.ui.activity.SegmentedActivity;
 import com.summary.sundy.ui.activity.ShopWidgetActivity;
+import com.summary.sundy.ui.activity.SmoothInputActivity;
 import com.summary.sundy.ui.activity.TitleBarActivity;
 import com.summary.sundy.ui.activity.ToastActivity;
 import com.summary.sundy.ui.activity.UITabViewActivity;
@@ -66,6 +71,9 @@ public abstract class AllActivitysModule {
     @ContributesAndroidInjector(modules = NavigationStyleActivityModule.class)
     abstract NavigationStyleActivity contributeNavigationStyleActivityInjector();
 
+    @ContributesAndroidInjector(modules = NavigationStyle2ActivityModule.class)
+    abstract NavigationStyle2Activity contributeNavigationStyle2ActivityInjector();
+
     @ContributesAndroidInjector(modules = CalendarActivityModule.class)
     abstract CalendarActivity contributeCalendarActivityInjector();
 
@@ -74,4 +82,16 @@ public abstract class AllActivitysModule {
 
     @ContributesAndroidInjector(modules = ShopWidgetActivityModule.class)
     abstract ShopWidgetActivity contributeShopWidgetActivityInjector();
+
+    @ContributesAndroidInjector(modules =SegmentedActivityModule.class)
+    abstract SegmentedActivity contributeSegmentedActivityInjector();
+
+    @ContributesAndroidInjector(modules =OperatorsActivityModule.class)
+    abstract OperatorsActivity contributeOperatorsActivityInjector();
+
+    @ContributesAndroidInjector(modules =InputLayoutActivityModule.class)
+    abstract InputLayoutActivity contributeInputLayoutActivityInjector();
+
+    @ContributesAndroidInjector(modules =SmoothInputActivityModule.class)
+    abstract SmoothInputActivity contributeSmoothInputActivityInjector();
 }

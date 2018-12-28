@@ -25,4 +25,6 @@
     <color name="color_medium_gray">#cdcdcd</color>
     <!-- 深灰色 -->
     <color name="color_grays">#999999</color>
+
+    <color name="color_282d31">#282d31</color>
 </resources>

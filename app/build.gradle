@@ -95,14 +95,17 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    //mvp
+
     implementation project(':networklibrary')
     implementation project(':uitabviewlibrary')
     implementation project(':agentweb')
+    implementation project(':maplibrary')
+    //mvp
     annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.15'
     //注解
-    // implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    implementation project(':maplibrary')
+    //聊天界面库
+    implementation 'am.widget:smoothinputlayout:1.1.2'
+
 }
