@@ -1,6 +1,7 @@
 package com.summary.sundy.mvp.module;
 
 import com.summary.common.utils.LogUtil;
+import com.summary.network.helper.NetHelper;
 
 import javax.inject.Singleton;
 
@@ -15,4 +16,5 @@ public class AppModule {
     static LogUtil provideLogUtil() {
         return new LogUtil();
     }
+
 }

@@ -2,18 +2,20 @@ package com.summary.sundy;
 
 import com.summary.common.base.BaseApplication;
 import com.summary.common.utils.toast.ToastUtils;
+import com.summary.network.helper.NetHelper;
 import com.summary.sundy.mvp.component.DaggerAppComponent;
 
 import okhttp3.internal.http.HttpHeaders;
 
 public class SundyApplication extends BaseApplication {
-
+    NetHelper netHelper;
 
     @Override
     public void onCreate() {
         super.onCreate();
         DaggerAppComponent.create().inject(this);
-        ToastUtils.init(this);
+        netHelper=new NetHelper();
+        netHelper.initNetWork(this,"https://s3.rootcloud.com/");
         initWebView();
 
 

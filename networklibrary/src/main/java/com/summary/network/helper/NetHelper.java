@@ -2,6 +2,7 @@ package com.summary.network.helper;
 
 import android.app.Application;
 
+import com.summary.network.interceptor.TokenInterceptor;
 import com.zhouyou.http.BuildConfig;
 import com.zhouyou.http.EasyHttp;
 import com.zhouyou.http.cache.converter.SerializableDiskConverter;
@@ -40,7 +41,8 @@ public class NetHelper {
                 .setRetryDelay(500)//每次延时500ms重试
                 .setRetryIncreaseDelay(500)//每次延时叠加500ms
                 .setBaseUrl(urlPath)
-                .setCookieStore(new CookieManger(application));
+                .setCookieStore(new CookieManger(application))
+                .addInterceptor(new TokenInterceptor());
                 //.setCacheDiskConverter(new SerializableDiskConverter())//默认缓存使用序列化转化
                 //.setCacheMaxSize(50 * 1024 * 1024)//设置缓存大小为50M
                 //.setCookieStore(new CookieManger(application))

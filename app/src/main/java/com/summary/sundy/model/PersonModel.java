@@ -1,6 +1,6 @@
 package com.summary.sundy.model;
 
-public class PersonModel{
+public class PersonModel extends BaseModel{
     private int id;
     private String name;
     private int age;

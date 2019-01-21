@@ -10,22 +10,27 @@ import com.summary.common.utils.LogUtil;
 import com.summary.common.utils.RequestPermissionUtil;
 import com.summary.common.view.BottomDialog;
 import com.summary.common.view.MainNavigateTabBar;
+import com.summary.sundy.helper.LoginHelper;
 import com.summary.sundy.ui.fragment.FindFragment;
 import com.summary.sundy.ui.fragment.HomeFragment;
 import com.summary.sundy.ui.fragment.MomentsFragment;
 import com.summary.sundy.ui.fragment.PersonFragment;
 import com.summary.sundy.ui.fragment.RxFragment;
 import com.yanzhenjie.permission.Permission;
+import com.zhouyou.http.callback.SimpleCallBack;
+import com.zhouyou.http.exception.ApiException;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 
-public class MainActivity extends BaseActivity  {
-   @BindView(R.id.navigateTabBar)
+public class MainActivity extends BaseActivity {
+    @BindView(R.id.navigateTabBar)
     MainNavigateTabBar mNavigateTabBar;
     @Inject
     LogUtil logUtil;
+    @Inject
+    LoginHelper loginHelper;
 
     @Override
     protected int getLayoutId() {
@@ -35,7 +40,7 @@ public class MainActivity extends BaseActivity  {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-        RequestPermissionUtil.requestPermission(mContext,Permission.ACCESS_FINE_LOCATION);
+        RequestPermissionUtil.requestPermission(mContext, Permission.ACCESS_FINE_LOCATION);
         //恢复选项状态
         mNavigateTabBar.onRestoreInstanceState(savedInstanceState);
         mNavigateTabBar.addTab(HomeFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_home, R.mipmap.ic_tab_bar_mine_selected, R.string.tab_bar_text_home));
@@ -43,8 +48,25 @@ public class MainActivity extends BaseActivity  {
         mNavigateTabBar.addTab(FindFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_find, R.mipmap.ic_tab_bar_find_selected, R.string.tab_bar_text_find));
         mNavigateTabBar.addTab(RxFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_find, R.mipmap.ic_tab_bar_find_selected, R.string.tab_bar_text_rx));
         mNavigateTabBar.addTab(PersonFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_person, R.mipmap.ic_tab_bar_person_selected, R.string.tab_bar_text_person));
+
+        loginHelper.login("SnYhiPjyOTNPpTsJLN9pJg==", "iL1xjarmUtY=q", new SimpleCallBack<String>() {
+            @Override
+            public void onError(ApiException e) {
+
+            }
+
+            @Override
+            public void onSuccess(String json) {
+
+            }
+        });
+
+
     }
 
+    public void reqest() {
+
+    }
 
     @Override
     public void initService() {
@@ -76,6 +98,7 @@ public class MainActivity extends BaseActivity  {
                 .setTag("BottomDialog")
                 .show();
     }
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);

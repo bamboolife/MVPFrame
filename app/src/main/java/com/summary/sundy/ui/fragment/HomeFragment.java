@@ -20,6 +20,7 @@ import com.summary.sundy.ui.activity.InputLayoutActivity;
 import com.summary.sundy.ui.activity.NavigationActivity;
 import com.summary.sundy.ui.activity.PopupWindowActivity;
 import com.summary.sundy.ui.activity.ProgressActivity;
+import com.summary.sundy.ui.activity.RxBusActivity;
 import com.summary.sundy.ui.activity.SegmentedActivity;
 import com.summary.sundy.ui.activity.ShopWidgetActivity;
 import com.summary.sundy.ui.activity.TitleBarActivity;
@@ -74,6 +75,7 @@ public class HomeFragment extends BaseFragment {
         widgetModels.add(new WidgetModel("分段控制器","不同方式实现的分段控制器",SegmentedActivity.class));
         widgetModels.add(new WidgetModel("MapView","地图的各种使用",SmoothActivity.class));
         widgetModels.add(new WidgetModel("聊天界面","聊天界面的各种实现",InputLayoutActivity.class));
+        widgetModels.add(new WidgetModel("RxBus","Rxbus的实现和使用用例",RxBusActivity.class));
         return widgetModels;
     }
 

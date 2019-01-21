@@ -2,7 +2,7 @@ package com.summary.sundy.model;
 
 import android.app.Activity;
 
-public class WidgetModel {
+public class WidgetModel extends BaseModel{
     public String title;
     public String content;
     public Class<? extends Activity> activity;

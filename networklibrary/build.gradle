@@ -32,5 +32,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     api project(':commonlibrary')
     api 'com.zhouyou:rxeasyhttp:2.1.2'
-
+    //RxLifecycle2 RxJava生命周期管理
+//    api 'com.trello.rxlifecycle2:rxlifecycle:2.2.2'
+//    api 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.1'
+//    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
+    api 'com.trello.rxlifecycle2:rxlifecycle-android-lifecycle:2.2.2'
+    //RxRelay
+    api 'com.jakewharton.rxrelay2:rxrelay:2.0.0'
 }

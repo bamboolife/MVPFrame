@@ -9,7 +9,6 @@ import com.yanzhenjie.permission.AndPermission;
 import java.util.List;
 
 /**
- * 树根互联科技有限公司
  * Created by sundy.jiang on 2018/12/10.
  */
 public class RequestPermissionUtil {

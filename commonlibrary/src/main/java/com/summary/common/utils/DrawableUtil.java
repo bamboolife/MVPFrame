@@ -3,8 +3,6 @@ package com.summary.common.utils;
 import android.graphics.drawable.Drawable;
 
 /**
- * @Author: AriesHoo on 2018/7/19 9:47
- * @E-Mail: AriesHoo@126.com
  * Function: Drawable设置相关工具类
  * Description:
  */

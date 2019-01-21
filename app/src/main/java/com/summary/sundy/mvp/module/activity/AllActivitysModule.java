@@ -14,6 +14,7 @@ import com.summary.sundy.ui.activity.NavigationStyleActivity;
 import com.summary.sundy.ui.activity.OperatorsActivity;
 import com.summary.sundy.ui.activity.PopupWindowActivity;
 import com.summary.sundy.ui.activity.ProgressActivity;
+import com.summary.sundy.ui.activity.RxBusActivity;
 import com.summary.sundy.ui.activity.SegmentedActivity;
 import com.summary.sundy.ui.activity.ShopWidgetActivity;
 import com.summary.sundy.ui.activity.SmoothInputActivity;
@@ -94,4 +95,7 @@ public abstract class AllActivitysModule {
 
     @ContributesAndroidInjector(modules =SmoothInputActivityModule.class)
     abstract SmoothInputActivity contributeSmoothInputActivityInjector();
+
+    @ContributesAndroidInjector(modules =RxBusActivityModule.class)
+    abstract RxBusActivity contributeRxBusActivityInjector();
 }

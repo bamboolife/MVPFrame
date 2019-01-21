@@ -6,8 +6,6 @@ import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
 /**
- * @Author: AriesHoo on 2018/7/19 9:49
- * @E-Mail: AriesHoo@126.com
  * Function: 资源文件获取帮助类
  * Description:
  */
