@@ -1,26 +1,17 @@
 package com.summary.sundy;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
 
 import com.summary.common.base.BaseActivity;
 import com.summary.common.service.FloatingService;
-import com.summary.common.utils.LogUtil;
-import com.summary.common.view.BottomDialog;
 import com.summary.common.view.MainNavigateTabBar;
-import com.summary.common.view.UIButton;
 import com.summary.sundy.ui.fragment.FindFragment;
 import com.summary.sundy.ui.fragment.HomeFragment;
 import com.summary.sundy.ui.fragment.MomentsFragment;
 import com.summary.sundy.ui.fragment.PersonFragment;
 import com.summary.sundy.ui.fragment.RxFragment;
 
-import javax.inject.Inject;
-
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 
 public class FrameMainLayoutActivity extends BaseActivity {
