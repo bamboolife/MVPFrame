@@ -76,7 +76,8 @@
         <activity android:name=".ui.activity.InputLayoutActivity" />
         <activity android:name=".ui.activity.SmoothInputActivity" />
         <activity android:name=".ui.activity.RxBusActivity" />
-        <activity android:name=".ui.activity.RxBusTestActivity"></activity>
+        <activity android:name=".ui.activity.RxBusTestActivity" />
+        <activity android:name=".ui.activity.AnchorSheetActivity"></activity>
     </application>
 
 </manifest>

@@ -33,24 +33,34 @@ public class RxBusActivity extends BaseActivity {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-        disposable = RxBus.getInstance()
-                .toObservable(EventMsg.class,
-                        AndroidSchedulers.mainThread(),
-                        AndroidSchedulers.mainThread(),
-                        new Consumer<EventMsg>() {
-                            @Override
-                            public void accept(EventMsg eventMsg) throws Exception {
-                                if (eventMsg.getTag().equals("2")) {
-                                    String data = (String) eventMsg.getData();
-                                    tvOne.setText(data);
-                                }
-                            }
-                        });
+//        disposable = RxBus.getInstance()
+//                .toObservable(EventMsg.class,
+//                        AndroidSchedulers.mainThread(),
+//                        AndroidSchedulers.mainThread(),
+//                        new Consumer<EventMsg>() {
+//                            @Override
+//                            public void accept(EventMsg eventMsg) throws Exception {
+//                                if (eventMsg.getTag().equals("2")) {
+//                                    String data = (String) eventMsg.getData();
+//                                    tvOne.setText(data);
+//                                }
+//                            }
+//                        });
+
+//        disposable=  RxBusEvent.getInstance().toObservable(this, EventMsg.class)
+//                .subscribe(new Consumer<EventMsg>() {
+//                    @Override
+//                    public void accept(EventMsg eventMsg) throws Exception {
+//                        final String data = (String) eventMsg.getData();
+//                        tvTwo.setText(data);
+//                    }
+//                });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 RxBus.getInstance().post(new EventMsg<String>("1","这是Rxbus的一个测试"));
-                RxBusEvent.getInstance().post(new EventMsg<String>("这是RxbusEvent的一个测试"));
+              //  RxBusEvent.getInstance().post(new EventMsg<String>("这是RxbusEvent的一个测试"));
+                RxBusEvent.getInstance().postSticky(new EventMsg<String>("这是RxbusEvent的一个测试"));
                 Intent intent=new Intent(mContext,RxBusTestActivity.class);
                 startActivity(intent);
             }

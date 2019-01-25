@@ -12,6 +12,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
+ * 可以使用
  * 使用Rxrelay实现数据传递
  * Rxrelay简单说明
  * 1、Rxrelay:既是一个Observable 也是 一个Consumer的RxJava。使用它的好处就是不必担心事件在onComplete或者onError后终止事件订阅关系，

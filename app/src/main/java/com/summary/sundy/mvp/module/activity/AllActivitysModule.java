@@ -3,6 +3,7 @@ package com.summary.sundy.mvp.module.activity;
 import com.summary.sundy.FrameMainLayoutActivity;
 import com.summary.sundy.MainActivity;
 import com.summary.sundy.mvp.component.activity.BaseActivityComponent;
+import com.summary.sundy.ui.activity.AnchorSheetActivity;
 import com.summary.sundy.ui.activity.CalendarActivity;
 import com.summary.sundy.ui.activity.CoordinatorActivity;
 import com.summary.sundy.ui.activity.CustomViewActivity;
@@ -98,4 +99,7 @@ public abstract class AllActivitysModule {
 
     @ContributesAndroidInjector(modules =RxBusActivityModule.class)
     abstract RxBusActivity contributeRxBusActivityInjector();
+
+    @ContributesAndroidInjector(modules =AnchorSheetActivityModule.class)
+    abstract AnchorSheetActivity contributeAnchorSheetActivityInjector();
 }

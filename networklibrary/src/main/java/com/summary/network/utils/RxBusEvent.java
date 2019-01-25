@@ -17,6 +17,9 @@ import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.PublishSubject;
 import io.reactivex.subjects.Subject;
 
+/**
+ * 还有bug没有解决
+ */
 public class RxBusEvent {
     private volatile static RxBusEvent mDefaultInstance;
     private final Subject<Object> mBus;
@@ -30,7 +33,7 @@ public class RxBusEvent {
 
     public static RxBusEvent getInstance() {
         if (mDefaultInstance == null) {
-            synchronized (RxBusEvent.class) {
+            synchronized (RxBus.class) {
                 if (mDefaultInstance == null) {
                     mDefaultInstance = new RxBusEvent();
                 }

@@ -13,6 +13,7 @@ import com.summary.common.view.itemdecoration.DividerItemDecoration;
 import com.summary.sundy.R;
 import com.summary.sundy.adapter.LayoutAdapter;
 import com.summary.sundy.model.WidgetModel;
+import com.summary.sundy.ui.activity.AnchorSheetActivity;
 import com.summary.sundy.ui.activity.CoordinatorActivity;
 
 import java.util.ArrayList;
@@ -46,6 +47,7 @@ public class MomentsFragment extends BaseFragment {
         List<WidgetModel> items=new ArrayList<>();
         items.add(new WidgetModel("CoordinatorLayout","CoordinatorLayout布局各种的使用",CoordinatorActivity.class));
         items.add(new WidgetModel("VLayout","Vlayout的使用",CoordinatorActivity.class));
+        items.add(new WidgetModel("AnchorSheetBehavior","design库实现底部弹窗",AnchorSheetActivity.class));
         return items;
     }
 
