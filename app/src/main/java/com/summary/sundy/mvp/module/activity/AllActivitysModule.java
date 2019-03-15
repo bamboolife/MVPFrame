@@ -4,10 +4,13 @@ import com.summary.sundy.FrameMainLayoutActivity;
 import com.summary.sundy.MainActivity;
 import com.summary.sundy.mvp.component.activity.BaseActivityComponent;
 import com.summary.sundy.ui.activity.AnchorSheetActivity;
+import com.summary.sundy.ui.activity.BlurActivity;
 import com.summary.sundy.ui.activity.CalendarActivity;
 import com.summary.sundy.ui.activity.CoordinatorActivity;
 import com.summary.sundy.ui.activity.CustomViewActivity;
+import com.summary.sundy.ui.activity.DialogActivity;
 import com.summary.sundy.ui.activity.EditTextStyleActivity;
+import com.summary.sundy.ui.activity.GuavaActivity;
 import com.summary.sundy.ui.activity.InputLayoutActivity;
 import com.summary.sundy.ui.activity.NavigationActivity;
 import com.summary.sundy.ui.activity.NavigationStyle2Activity;
@@ -16,7 +19,9 @@ import com.summary.sundy.ui.activity.OperatorsActivity;
 import com.summary.sundy.ui.activity.PopupWindowActivity;
 import com.summary.sundy.ui.activity.ProgressActivity;
 import com.summary.sundy.ui.activity.RxBusActivity;
+import com.summary.sundy.ui.activity.Segmented2Activity;
 import com.summary.sundy.ui.activity.SegmentedActivity;
+import com.summary.sundy.ui.activity.SheetViewActivity;
 import com.summary.sundy.ui.activity.ShopWidgetActivity;
 import com.summary.sundy.ui.activity.SmoothInputActivity;
 import com.summary.sundy.ui.activity.TitleBarActivity;
@@ -88,6 +93,9 @@ public abstract class AllActivitysModule {
     @ContributesAndroidInjector(modules =SegmentedActivityModule.class)
     abstract SegmentedActivity contributeSegmentedActivityInjector();
 
+    @ContributesAndroidInjector(modules =Segmented2ActivityModule.class)
+    abstract Segmented2Activity contributeSegmented2ActivityInjector();
+
     @ContributesAndroidInjector(modules =OperatorsActivityModule.class)
     abstract OperatorsActivity contributeOperatorsActivityInjector();
 
@@ -102,4 +110,16 @@ public abstract class AllActivitysModule {
 
     @ContributesAndroidInjector(modules =AnchorSheetActivityModule.class)
     abstract AnchorSheetActivity contributeAnchorSheetActivityInjector();
+
+    @ContributesAndroidInjector(modules =GuavaActivityModule.class)
+    abstract GuavaActivity contributeGuavaActivityInjector();
+
+    @ContributesAndroidInjector(modules =BlurActivityModule.class)
+    abstract BlurActivity contributeBlurActivityInjector();
+
+    @ContributesAndroidInjector(modules =DialogActivityModule.class)
+    abstract DialogActivity contributeDialogActivityInjector();
+
+    @ContributesAndroidInjector(modules =SheetViewActivityModule.class)
+    abstract SheetViewActivity contributeSheetViewActivityInjector();
 }

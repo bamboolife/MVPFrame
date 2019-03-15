@@ -7,5 +7,5 @@ import dagger.Module;
  * Created by sundy.jiang on 2018/12/4.
  */
 @Module
-public class CalendarActivityModule {
+public abstract class CalendarActivityModule {
 }

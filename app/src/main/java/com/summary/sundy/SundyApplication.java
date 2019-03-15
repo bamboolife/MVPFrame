@@ -15,7 +15,7 @@ public class SundyApplication extends BaseApplication {
         super.onCreate();
         DaggerAppComponent.create().inject(this);
         netHelper=new NetHelper();
-        netHelper.initNetWork(this,"https://s3.rootcloud.com/");
+        netHelper.initNetWork(this,BuildConfig.BASE_URL);
         initWebView();
 
 

@@ -14,14 +14,19 @@ import com.summary.common.view.itemdecoration.DividerItemDecoration;
 import com.summary.sundy.R;
 import com.summary.sundy.adapter.WidgetAdapter;
 import com.summary.sundy.model.WidgetModel;
+import com.summary.sundy.ui.activity.BlurActivity;
 import com.summary.sundy.ui.activity.CustomViewActivity;
+import com.summary.sundy.ui.activity.DialogActivity;
 import com.summary.sundy.ui.activity.EditTextStyleActivity;
+import com.summary.sundy.ui.activity.GuavaActivity;
 import com.summary.sundy.ui.activity.InputLayoutActivity;
 import com.summary.sundy.ui.activity.NavigationActivity;
 import com.summary.sundy.ui.activity.PopupWindowActivity;
 import com.summary.sundy.ui.activity.ProgressActivity;
 import com.summary.sundy.ui.activity.RxBusActivity;
+import com.summary.sundy.ui.activity.Segmented2Activity;
 import com.summary.sundy.ui.activity.SegmentedActivity;
+import com.summary.sundy.ui.activity.SheetViewActivity;
 import com.summary.sundy.ui.activity.ShopWidgetActivity;
 import com.summary.sundy.ui.activity.TitleBarActivity;
 import com.summary.sundy.ui.activity.ToastActivity;
@@ -73,9 +78,14 @@ public class HomeFragment extends BaseFragment {
         widgetModels.add(new WidgetModel("Progress","各种样式的进度条",ProgressActivity.class));
         widgetModels.add(new WidgetModel("商城控件","各种样式的商城控件",ShopWidgetActivity.class));
         widgetModels.add(new WidgetModel("分段控制器","不同方式实现的分段控制器",SegmentedActivity.class));
+        widgetModels.add(new WidgetModel("分段控制器2","不同方式实现的分段控制器", Segmented2Activity.class));
         widgetModels.add(new WidgetModel("MapView","地图的各种使用",SmoothActivity.class));
         widgetModels.add(new WidgetModel("聊天界面","聊天界面的各种实现",InputLayoutActivity.class));
         widgetModels.add(new WidgetModel("RxBus","Rxbus的实现和使用用例",RxBusActivity.class));
+        widgetModels.add(new WidgetModel("Guava","Google guava的使用用例",GuavaActivity.class));
+        widgetModels.add(new WidgetModel("Blur","使控件模糊的容器", BlurActivity.class));
+        widgetModels.add(new WidgetModel("Dialog","各种方式实现的Dialog样式", DialogActivity.class));
+        widgetModels.add(new WidgetModel("SheetView","各种方式实现的底部弹窗", SheetViewActivity.class));
         return widgetModels;
     }
 

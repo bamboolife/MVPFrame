@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.common.eventbus.EventBus;
 import com.summary.common.base.BaseActivity;
 import com.summary.network.model.EventMsg;
 import com.summary.network.utils.RxBus;
@@ -61,6 +62,10 @@ public class RxBusActivity extends BaseActivity {
                 RxBus.getInstance().post(new EventMsg<String>("1","这是Rxbus的一个测试"));
               //  RxBusEvent.getInstance().post(new EventMsg<String>("这是RxbusEvent的一个测试"));
                 RxBusEvent.getInstance().postSticky(new EventMsg<String>("这是RxbusEvent的一个测试"));
+
+                EventBus eventBus=new EventBus("test");
+                eventBus.register(RxBusTestActivity.class);
+                eventBus.post("111111111111111111111111111111");
                 Intent intent=new Intent(mContext,RxBusTestActivity.class);
                 startActivity(intent);
             }

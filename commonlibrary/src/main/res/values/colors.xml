@@ -11,7 +11,17 @@
     <color name="tabcolor1">#333D5D</color>
     <color name="tabcolor2">#323F63</color>
 
-    <color name="gray">#DEDEDE</color>
+    <color name="black">#000000</color>
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="actionsheet_red">#FD4A2E</color>
+    <color name="actionsheet_gray">#8F8F8F</color>
+
+    <color name="gray1">#DEDEDE</color>
+
+    <color name="gray">#ddd</color>
+    <color name="blue">#3394EC</color>
+    <color name="video_gray">#aadddddd</color>
 
     <color name="progress_nomal">#00B184</color>
     <color name="progress_select">#E6E6E6</color>

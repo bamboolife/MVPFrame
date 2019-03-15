@@ -6,5 +6,5 @@ import dagger.Module;
  * Created by sundy.jiang on 2018/12/17.
  */
 @Module
-public class OperatorsActivityModule {
+public abstract class OperatorsActivityModule {
 }

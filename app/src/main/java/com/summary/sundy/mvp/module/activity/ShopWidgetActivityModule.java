@@ -7,5 +7,5 @@ import dagger.Module;
  * Created by sundy.jiang on 2018/12/6.
  */
 @Module
-public class ShopWidgetActivityModule {
+public abstract class ShopWidgetActivityModule {
 }

@@ -3,5 +3,5 @@ package com.summary.sundy.mvp.module.activity;
 import dagger.Module;
 
 @Module
-public class PopupWindowActivityModule {
+public abstract class PopupWindowActivityModule {
 }

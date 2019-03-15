@@ -2,10 +2,12 @@ package com.summary.sundy.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.common.eventbus.Subscribe;
 import com.summary.network.model.EventMsg;
 import com.summary.network.utils.RxBus;
 import com.summary.network.utils.RxBusEvent;
@@ -58,7 +60,10 @@ public class RxBusTestActivity extends AppCompatActivity {
            }
        });
     }
-
+    @Subscribe
+    public void msgEvent(String msg){
+        Log.i("log_msg", "msgEvent:= "+msg);
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

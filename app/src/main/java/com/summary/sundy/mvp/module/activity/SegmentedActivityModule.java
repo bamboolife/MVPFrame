@@ -6,5 +6,5 @@ import dagger.Module;
  * Created by sundy.jiang on 2018/12/14.
  */
 @Module
-public class SegmentedActivityModule {
+public abstract class SegmentedActivityModule {
 }
