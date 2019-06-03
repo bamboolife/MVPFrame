@@ -96,9 +96,6 @@ final class ToastHelper implements Runnable {
         }
     }
 
-    /**
-     * {@link Runnable}
-     */
     @Override
     public void run() {
         cancel();

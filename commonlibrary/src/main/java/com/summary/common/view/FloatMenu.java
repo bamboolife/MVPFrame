@@ -22,7 +22,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.summary.common.R;
-import com.summary.common.utils.DisplayUtils;
+import com.summary.common.utils.DensityUtils;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -80,9 +80,9 @@ public class FloatMenu extends PopupWindow {
 		view.setOnTouchListener(new MenuTouchListener());
 		this.context = context;
 		this.view = view;
-		VERTICAL_OFFSET = DisplayUtils.dp2px(context, 10);
-		DEFAULT_MENU_WIDTH =DisplayUtils.dp2px(context, 180);
-		screenPoint =DisplayUtils.getScreenMetrics(context);
+		VERTICAL_OFFSET = DensityUtils.dp2px(context, 10);
+		DEFAULT_MENU_WIDTH = DensityUtils.dp2px(context, 180);
+		screenPoint = DensityUtils.getScreenMetrics(context);
 		menuItemList = new ArrayList<>();
 	}
 
@@ -136,7 +136,7 @@ public class FloatMenu extends PopupWindow {
 		menuLayout = new LinearLayout(context);
 		menuLayout.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.bg_shadow));
 		menuLayout.setOrientation(LinearLayout.VERTICAL);
-		int padding =DisplayUtils.dp2px(context, 12);
+		int padding = DensityUtils.dp2px(context, 12);
 		for(int i = 0; i < menuItemList.size(); i ++){
 			TextView textView = new TextView(context);
 			textView.setClickable(true);
@@ -150,7 +150,7 @@ public class FloatMenu extends PopupWindow {
 			if(menuModel.getItemResId() != View.NO_ID){
 				Drawable drawable = ContextCompat.getDrawable(context, menuModel.getItemResId());
 				drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-				textView.setCompoundDrawablePadding(DisplayUtils.dp2px(context, 12));
+				textView.setCompoundDrawablePadding(DensityUtils.dp2px(context, 12));
 				textView.setCompoundDrawables(drawable, null, null, null);
 			}
 			textView.setText(menuModel.getItem());

@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.summary.common.R;
-import com.summary.common.utils.DisplayUtils;
+import com.summary.common.utils.DensityUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +59,7 @@ public class NavMenuLayout extends LinearLayout {
     public NavMenuLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
-        marginTop = DisplayUtils.dp2px(context, 5);
+        marginTop = DensityUtils.dp2px(context, 5);
         init(context, attrs, defStyleAttr);
     }
 

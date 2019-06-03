@@ -59,9 +59,7 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
-    <declare-styleable name="ShadowContainer">
-        <attr name="sc_shadowColor" format="color" />
-    </declare-styleable>
+
 
     <!-- 自定义仿IOS的AlertDialog的样式 -->
     <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
@@ -100,4 +98,10 @@
         <item name="android:windowExitAnimation">@anim/actionsheet_dialog_out</item>
     </style>
 
+
+
+    <style name="TRM_ANIM_STYLE">
+        <item name="android:windowEnterAnimation">@anim/trm_popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/trm_popup_exit</item>
+    </style>
 </resources>

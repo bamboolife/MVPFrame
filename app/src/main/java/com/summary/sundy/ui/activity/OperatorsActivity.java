@@ -17,14 +17,20 @@ import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.Completable;
+import io.reactivex.CompletableObserver;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
+import io.reactivex.Single;
+import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
@@ -32,6 +38,7 @@ import io.reactivex.schedulers.Schedulers;
  * 操作符的各种使用
  */
 public class OperatorsActivity extends BaseActivity {
+    private static final String TAG = "log_observer";
     @BindView(R.id.textView)
     TextView textView;
     private final CompositeDisposable disposables = new CompositeDisposable();
@@ -44,16 +51,17 @@ public class OperatorsActivity extends BaseActivity {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-
+        distinctAndfilter();
     }
 
     @OnClick(R.id.btn)
     public void doSomeWork() {
+        //just
 //         getObservable()
 //                 .subscribeOn(Schedulers.io())
 //                 .observeOn(AndroidSchedulers.mainThread())
 //                 .subscribe(getObserver());
-
+       //map 数据变换
 //         getMapObservable()
 //                 .subscribeOn(Schedulers.io())
 //                 .observeOn(AndroidSchedulers.mainThread())
@@ -71,7 +79,7 @@ public class OperatorsActivity extends BaseActivity {
 //                     }
 //                 })
 //                 .subscribe(getMapObserver());
-
+        //zip数据合并
 //        Observable.zip(getUserObservable(), getPersonObservable(),
 //                new BiFunction<List<UserModel>, List<PersonModel>, List<UserModel>>() {
 //                    @Override
@@ -88,6 +96,7 @@ public class OperatorsActivity extends BaseActivity {
 //                .subscribeOn(Schedulers.io())
 //                .observeOn(AndroidSchedulers.mainThread())
 //                .subscribe(getZipObserver());
+           //defer 延迟发送
 //              disposables.add(sampleObservable()
 //                      .subscribeOn(Schedulers.io())
 //                      .observeOn(AndroidSchedulers.mainThread())
@@ -113,14 +122,31 @@ public class OperatorsActivity extends BaseActivity {
 //                              Log.i("log_observer", " onComplete");
 //                          }
 //                      }));
-
+                     //take 限制发送的个数
 //                         getTakeObservable().subscribeOn(Schedulers.io())
 //                                 .observeOn(AndroidSchedulers.mainThread())
+//                                    .take(3)
 //                                 .subscribe(getTakeObserver());
 
-                           getTakeObservable().subscribeOn(Schedulers.io())
-                                   .observeOn(AndroidSchedulers.mainThread())
-                                   .subscribe(getTakeObserver());
+                       //timer 定时器 定时发送
+//               getTimerObservable().subscribeOn(Schedulers.io())
+//                          .observeOn(AndroidSchedulers.mainThread())
+//                       .subscribe(getTimerObserver());
+                //Interval 轮训 也可以做定时发送
+//            disposables.add(getIntervalObservable()
+//                      .subscribeOn(Schedulers.io())
+//                     .observeOn(AndroidSchedulers.mainThread())
+//                     .subscribeWith(getIntervalObserver()));
+       //single 只发射一条单一的数据，或者一条异常通知，不能发射完成通知，其中数据与通知只能发射一个。
+//        Single.just("Sundy")
+//                .subscribe(getSingleObserver());
+        //只发射一条完成通知，或者一条异常通知，不能发射数据，其中完成通知与异常通知只能发射一个
+//        Completable completable = Completable.timer(1000, TimeUnit.MILLISECONDS);
+//        completable
+//                .subscribeOn(Schedulers.io())
+//                // Be notified on the main thread
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(getCompletableObserver());
     }
 
     /**
@@ -327,22 +353,28 @@ public class OperatorsActivity extends BaseActivity {
 
            @Override
            public void onSubscribe(Disposable d) {
-
+               Log.d("log_observer", " onSubscribe : " + d.isDisposed());
            }
 
            @Override
-           public void onNext(Integer integer) {
-
+           public void onNext(Integer value) {
+               textView.append(" onNext : value : " + value);
+               textView.append("\n");
+               Log.d(TAG, " onNext value : " + value);
            }
 
            @Override
            public void onError(Throwable e) {
-
+               textView.append(" onError : " + e.getMessage());
+               textView.append("\n");
+               Log.d(TAG, " onError : " + e.getMessage());
            }
 
            @Override
            public void onComplete() {
-
+               textView.append(" onComplete");
+               textView.append("\n");
+               Log.d(TAG, " onComplete");
            }
        };
     }
@@ -355,26 +387,159 @@ public class OperatorsActivity extends BaseActivity {
         return new Observer<Long>() {
             @Override
             public void onSubscribe(Disposable d) {
-
+                Log.d(TAG, " onSubscribe : " + d.isDisposed());
             }
 
             @Override
             public void onNext(Long aLong) {
-
+                textView.append(" onNext : value : " + aLong);
+                textView.append("\n");
+                Log.d(TAG, " onNext : value : " + aLong);
             }
 
             @Override
             public void onError(Throwable e) {
-
+                textView.append(" onError : " + e.getMessage());
+                textView.append("\n");
+                Log.d(TAG, " onError : " + e.getMessage());
             }
 
             @Override
             public void onComplete() {
-
+                textView.append(" onComplete");
+                textView.append("\n");
+                Log.d(TAG, " onComplete");
             }
         };
     }
+///////////////////////////////////////////////////////////////////////////////////
+private Observable<? extends Long> getIntervalObservable() {
+    return Observable.interval(0, 2, TimeUnit.SECONDS);
+}
 
+    private DisposableObserver<Long> getIntervalObserver() {
+        return new DisposableObserver<Long>() {
+
+            @Override
+            public void onNext(Long value) {
+                textView.append(" onNext : value : " + value);
+                textView.append("\n");
+                Log.d(TAG, " onNext : value : " + value);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append(" onError : " + e.getMessage());
+                textView.append("\n");
+                Log.d(TAG, " onError : " + e.getMessage());
+            }
+
+            @Override
+            public void onComplete() {
+                textView.append(" onComplete");
+                textView.append("\n");
+                Log.d(TAG, " onComplete");
+            }
+        };
+    }
+    ///////////////////////////////////////////////////////////
+    private SingleObserver<String> getSingleObserver() {
+        return new SingleObserver<String>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.d(TAG, " onSubscribe : " + d.isDisposed());
+            }
+
+            @Override
+            public void onSuccess(String value) {
+                textView.append(" onNext : value : " + value);
+                textView.append("\n");
+                Log.d(TAG, " onNext value : " + value);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append(" onError : " + e.getMessage());
+                textView.append("\n");
+                Log.d(TAG, " onError : " + e.getMessage());
+            }
+        };
+    }
+    //////////////////////////////////////////////////////////
+    private CompletableObserver getCompletableObserver() {
+        return new CompletableObserver() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.d(TAG, " onSubscribe : " + d.isDisposed());
+            }
+
+            @Override
+            public void onComplete() {
+                textView.append(" onComplete");
+                textView.append("\n");
+                Log.d(TAG, " onComplete");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append(" onError : " + e.getMessage());
+                textView.append("\n");
+                Log.d(TAG, " onError : " + e.getMessage());
+            }
+        };
+    }
+    /////////////////////////////////////////////////////////
+    private void distinctAndfilter(){
+              List<UserModel> userModels=new ArrayList<>();
+              UserModel userModel1=new UserModel("LHD1",10);
+              UserModel userModel2=new UserModel("LHD1",12);
+              UserModel userModel3=new UserModel("LHD3",15);
+              UserModel userModel4=new UserModel("LHD5",10);
+              UserModel userModel5=new UserModel("LHD4",10);
+              UserModel userModel6=new UserModel("LHD7",18);
+              UserModel userModel7=new UserModel("LHD1",10);
+              UserModel userModel8=new UserModel("LHD1",10);
+              userModels.add(userModel1);
+              userModels.add(userModel2);
+              userModels.add(userModel3);
+              userModels.add(userModel4);
+              userModels.add(userModel5);
+              userModels.add(userModel6);
+              userModels.add(userModel7);
+              userModels.add(userModel8);
+              Observable.fromIterable(userModels)
+                      .distinct(new Function<UserModel, String>() {
+                          @Override
+                          public String apply(UserModel userModel) throws Exception {
+                              return userModel.getName();
+                          }
+                      }).filter(new Predicate<UserModel>() {
+                  @Override
+                  public boolean test(UserModel userModel) throws Exception {
+                      return userModel.getAge()>11;
+                  }
+              }).subscribe(new Observer<UserModel>() {
+                  @Override
+                  public void onSubscribe(Disposable d) {
+                      Log.i("log_tip", "onSubscribe: ");
+                  }
+
+                  @Override
+                  public void onNext(UserModel userModel) {
+                      Log.i("log_tip", "onNext: "+userModel.toString());
+                  }
+
+                  @Override
+                  public void onError(Throwable e) {
+                      Log.i("log_tip", "onError: ");
+                  }
+
+                  @Override
+                  public void onComplete() {
+                      Log.i("log_tip", "onComplete: ");
+                  }
+              });
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

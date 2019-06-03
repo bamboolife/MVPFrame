@@ -10,6 +10,11 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".SundyApplication"
@@ -20,7 +25,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup,android:supportsRtl">
-        <activity android:name=".ui.activity.SheetViewActivity"></activity>
+        <activity android:name=".ui.activity.SwitchMapActivity"></activity>
+        <activity android:name=".ui.activity.DrawerLayoutActivity" />
+        <activity android:name=".ui.activity.SheetViewActivity" />
         <activity android:name=".ui.activity.DialogActivity" />
         <activity android:name=".ui.activity.BlurActivity" />
         <activity android:name=".ui.activity.Segmented2Activity" />
@@ -28,6 +35,9 @@
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="a267f0779077f269027695f54a3e153c" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBTd0DAWn62I556kMgmr3kfzMYzYQH2E5A" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -78,6 +88,10 @@
         <activity android:name=".ui.activity.RxBusTestActivity" />
         <activity android:name=".ui.activity.AnchorSheetActivity" />
         <activity android:name=".ui.activity.GuavaActivity" />
+
+        <service
+            android:name="com.amap.api.location.APSService"
+            android:exported="true"></service>
     </application>
 
 </manifest>

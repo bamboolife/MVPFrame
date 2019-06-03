@@ -49,18 +49,18 @@ public class MainActivity extends BaseActivity {
         mNavigateTabBar.addTab(RxFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_find, R.mipmap.ic_tab_bar_find_selected, R.string.tab_bar_text_rx));
         mNavigateTabBar.addTab(PersonFragment.class, new MainNavigateTabBar.TabParam(R.mipmap.ic_tab_bar_person, R.mipmap.ic_tab_bar_person_selected, R.string.tab_bar_text_person));
 
-        loginHelper.login("SnYhiPjyOTNPpTsJLN9pJg==", "iL1xjarmUtY=q", new SimpleCallBack<String>() {
-            @Override
-            public void onError(ApiException e) {
-
-            }
-
-            @Override
-            public void onSuccess(String json) {
-
-            }
-        });
-
+//        loginHelper.login("SnYhiPjyOTNPpTsJLN9pJg==", "iL1xjarmUtY=q", new SimpleCallBack<String>() {
+//            @Override
+//            public void onError(ApiException e) {
+//
+//            }
+//
+//            @Override
+//            public void onSuccess(String json) {
+//
+//            }
+//        });
+     showDialog();
 
     }
 

@@ -52,6 +52,7 @@ public abstract class BaseBottomDialog extends DialogFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Dialog dialog = getDialog();
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(getCancelOutside());
         dialog.setCanceledOnTouchOutside(getCancelOutside()); // 外部点击取消
         View v = inflater.inflate(getLayoutRes(), container, false);
         bindView(v);

@@ -186,4 +186,14 @@
         <!--菜单个数-->
         <attr name="menuCount" format="integer" />
     </declare-styleable>
+    <declare-styleable name="ShadowContainer">
+        <attr name="sc_shadowColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="FlutteringLayout">
+        <attr name="enter_duration" format="integer"/>
+        <attr name="duration" format="integer"/>
+        <attr name="scale" format="float"/>
+        <attr name="same_size" format="boolean"/>
+    </declare-styleable>
 </resources>

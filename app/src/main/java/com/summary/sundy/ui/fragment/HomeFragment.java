@@ -4,19 +4,21 @@ package com.summary.sundy.ui.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.summary.common.base.BaseFragment;
-import com.summary.common.view.itemdecoration.DividerItemDecoration;
+import com.summary.common.utils.DensityUtils;
+import com.summary.common.view.itemdecoration.RecyclerViewDividerTool;
 import com.summary.sundy.R;
 import com.summary.sundy.adapter.WidgetAdapter;
 import com.summary.sundy.model.WidgetModel;
 import com.summary.sundy.ui.activity.BlurActivity;
 import com.summary.sundy.ui.activity.CustomViewActivity;
 import com.summary.sundy.ui.activity.DialogActivity;
+import com.summary.sundy.ui.activity.DrawerLayoutActivity;
 import com.summary.sundy.ui.activity.EditTextStyleActivity;
 import com.summary.sundy.ui.activity.GuavaActivity;
 import com.summary.sundy.ui.activity.InputLayoutActivity;
@@ -28,6 +30,7 @@ import com.summary.sundy.ui.activity.Segmented2Activity;
 import com.summary.sundy.ui.activity.SegmentedActivity;
 import com.summary.sundy.ui.activity.SheetViewActivity;
 import com.summary.sundy.ui.activity.ShopWidgetActivity;
+import com.summary.sundy.ui.activity.SwitchMapActivity;
 import com.summary.sundy.ui.activity.TitleBarActivity;
 import com.summary.sundy.ui.activity.ToastActivity;
 import com.summary.sundy.ui.activity.UITabViewActivity;
@@ -59,9 +62,9 @@ public class HomeFragment extends BaseFragment {
 
     private void initRecyclerView() {
         adapter=new WidgetAdapter(getData());
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(mContext,3));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(mContext));
+        mRecyclerView.addItemDecoration(new RecyclerViewDividerTool(DensityUtils.dp2px(mContext,5f)));
         mRecyclerView.setAdapter(adapter);
     }
 
@@ -86,6 +89,8 @@ public class HomeFragment extends BaseFragment {
         widgetModels.add(new WidgetModel("Blur","使控件模糊的容器", BlurActivity.class));
         widgetModels.add(new WidgetModel("Dialog","各种方式实现的Dialog样式", DialogActivity.class));
         widgetModels.add(new WidgetModel("SheetView","各种方式实现的底部弹窗", SheetViewActivity.class));
+        widgetModels.add(new WidgetModel("Drawer","android侧滑的实现", DrawerLayoutActivity.class));
+        widgetModels.add(new WidgetModel("地图切换","高德地图和google地图切换", SwitchMapActivity.class));
         return widgetModels;
     }
 

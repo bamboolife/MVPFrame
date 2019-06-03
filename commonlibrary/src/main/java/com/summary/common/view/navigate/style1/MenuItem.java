@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.summary.common.R;
-import com.summary.common.utils.DisplayUtils;
+import com.summary.common.utils.DensityUtils;
 
 public class MenuItem extends FrameLayout {
 
@@ -50,7 +50,7 @@ public class MenuItem extends FrameLayout {
     }
 
     private void intiView(Context context) {
-        marginTop = DisplayUtils.dp2px(context, 5);
+        marginTop = DensityUtils.dp2px(context, 5);
         //加载布局
         mRootView = LayoutInflater.from(context).inflate(R.layout.item_menu, this, false);
 

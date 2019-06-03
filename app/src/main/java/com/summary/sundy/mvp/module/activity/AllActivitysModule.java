@@ -9,6 +9,7 @@ import com.summary.sundy.ui.activity.CalendarActivity;
 import com.summary.sundy.ui.activity.CoordinatorActivity;
 import com.summary.sundy.ui.activity.CustomViewActivity;
 import com.summary.sundy.ui.activity.DialogActivity;
+import com.summary.sundy.ui.activity.DrawerLayoutActivity;
 import com.summary.sundy.ui.activity.EditTextStyleActivity;
 import com.summary.sundy.ui.activity.GuavaActivity;
 import com.summary.sundy.ui.activity.InputLayoutActivity;
@@ -122,4 +123,7 @@ public abstract class AllActivitysModule {
 
     @ContributesAndroidInjector(modules =SheetViewActivityModule.class)
     abstract SheetViewActivity contributeSheetViewActivityInjector();
+
+    @ContributesAndroidInjector(modules =DrawerLayoutActivityModule.class)
+    abstract DrawerLayoutActivity contributeDrawerLayoutActivityInjector();
 }

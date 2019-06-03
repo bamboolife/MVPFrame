@@ -45,7 +45,7 @@
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp"
                 android:paddingTop="2dp"
-                android:text="1K"
+                android:text="1h"
                 android:textColor="@android:color/white"
                 android:textSize="12sp"
                 />
@@ -85,7 +85,7 @@
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp"
                 android:paddingTop="2dp"
-                android:text="100K"
+                android:text=""
                 android:textColor="@android:color/white"
                 android:textSize="12sp"
                 />

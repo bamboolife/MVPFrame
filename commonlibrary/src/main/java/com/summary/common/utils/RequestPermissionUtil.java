@@ -16,7 +16,7 @@ public class RequestPermissionUtil {
         AndPermission.with(context)
                 .runtime()
                 .permission(permissions)
-                .rationale(new RuntimeRationale())
+               // .rationale(new RuntimeRationale())
                 .onGranted(new Action<List<String>>() {
                     @Override
                     public void onAction(List<String> permissions) {

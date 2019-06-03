@@ -109,7 +109,15 @@ public class UIActionSheetDialog {
         sheetItemList.add(new SheetItem(strItem, color, listener));
         return this;
     }
-
+   public UIActionSheetDialog addSheetItems(List<SheetItem> sheetItems){
+       if (sheetItemList == null) {
+           sheetItemList = new ArrayList<SheetItem>();
+       }
+       for (SheetItem item:sheetItems) {
+           sheetItemList.add(item);
+       }
+        return this;
+   }
     /**
      * 设置条目布局
      */

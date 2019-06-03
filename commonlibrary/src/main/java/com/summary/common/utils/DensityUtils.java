@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Point;
 import android.util.DisplayMetrics;
+import android.view.WindowManager;
 
-public class DisplayUtils {
+import java.lang.reflect.Field;
+
+public class DensityUtils {
 	/**
 	 * 将px值转换为dp值
 	 */
@@ -61,5 +64,37 @@ public class DisplayUtils {
 		int w_screen = dm.widthPixels;
 		int h_screen = dm.heightPixels;
 		return new Point(w_screen, h_screen);
+	}
+
+	public static int[] getScreenWidthAndHeight(Context ctx) {
+		WindowManager mWm = (WindowManager) ctx
+				.getSystemService(Context.WINDOW_SERVICE);
+
+		DisplayMetrics dm = new DisplayMetrics();
+		// 获取屏幕信息
+		mWm.getDefaultDisplay().getMetrics(dm);
+
+		int screenWidth = dm.widthPixels;
+
+		int screenHeigh = dm.heightPixels;
+
+		return new int[] { screenWidth, screenHeigh };
+	}
+
+	public static int getStatusBarHeight(Context ctx) {
+		Class<?> c = null;
+		Object obj = null;
+		Field field = null;
+		int x = 0, sbar = 0;
+		try {
+			c = Class.forName("com.android.internal.R$dimen");
+			obj = c.newInstance();
+			field = c.getField("status_bar_height");
+			x = Integer.parseInt(field.get(obj).toString());
+			sbar = ctx.getResources().getDimensionPixelSize(x);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		return sbar;
 	}
 }

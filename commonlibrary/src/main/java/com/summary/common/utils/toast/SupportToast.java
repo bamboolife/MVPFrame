@@ -23,9 +23,6 @@ final class SupportToast extends BaseToast {
         getHandler().postDelayed(this, SHOW_DELAY_MILLIS);
     }
 
-    /**
-     * {@link Runnable}
-     */
     @Override
     public void run() {
         // 设置吐司文本

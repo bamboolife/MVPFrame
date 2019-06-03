@@ -41,4 +41,6 @@ dependencies {
     api 'com.amap.api:location:4.3.0'
     //搜索功能
     api 'com.amap.api:search:6.5.0.1'
+
+    api 'com.google.android.gms:play-services-maps:16.1.0'
 }

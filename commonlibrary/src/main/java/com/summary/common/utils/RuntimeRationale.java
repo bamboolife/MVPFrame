@@ -16,6 +16,7 @@
 package com.summary.common.utils;
 
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -35,7 +36,7 @@ public final class RuntimeRationale implements Rationale<List<String>> {
         List<String> permissionNames = Permission.transformText(context, permissions);
         String message = context.getString(R.string.message_permission_rationale, TextUtils.join("\n", permissionNames));
 
-        new AlertDialog.Builder(context)
+        new AlertDialog.Builder((Activity)context)
                 .setCancelable(false)
                 .setTitle(R.string.title_dialog)
                 .setMessage(message)

@@ -22,7 +22,7 @@
     <color name="gray">#ddd</color>
     <color name="blue">#3394EC</color>
     <color name="video_gray">#aadddddd</color>
-
+    <color name="mask_color">#66000000</color>
     <color name="progress_nomal">#00B184</color>
     <color name="progress_select">#E6E6E6</color>
 
