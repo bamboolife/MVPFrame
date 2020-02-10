@@ -11,9 +11,9 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    dataBinding {
-        enabled = true
-    }
+//    dataBinding {
+//        enabled = true
+//    }
 //    signingConfigs {
 //        config {
 //            keyAlias 'irootech'
@@ -39,7 +39,7 @@ android {
             //混淆
             minifyEnabled false
             //zipAlign优化
-            zipAlignEnabled true
+            zipAlignEnabled false
         }
     }
     flavorDimensions 'store'
@@ -78,10 +78,10 @@ android {
         checkReleaseBuilds false
         abortOnError false
     }
-    aaptOptions {
-        cruncherEnabled = false
-        useNewCruncher = false
-    }
+//    aaptOptions {
+//        cruncherEnabled = false
+//        useNewCruncher = false
+//    }
 }
 allprojects {
     repositories {
@@ -108,5 +108,5 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //聊天界面库
     implementation 'am.widget:smoothinputlayout:1.1.2'
-
+    //  debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-beta-3'
 }

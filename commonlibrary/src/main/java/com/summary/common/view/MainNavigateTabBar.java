@@ -128,13 +128,13 @@ public class MainNavigateTabBar extends LinearLayout implements View.OnClickList
         }
 
         if (tabParam.backgroundColor > 0) {
-            //view.setBackgroundResource(tabParam.backgroundColor);
-            GradientDrawable gradientDrawable=new GradientDrawable();
-            int colors[]={getContext().getResources().getColor(R.color.colorItems),R.color.tabcolor1};
-            gradientDrawable.setColors(colors);
-            gradientDrawable.setOrientation(GradientDrawable.Orientation.TOP_BOTTOM);
-          //  view.setBackgroundResource(R.color.colorItems);
-            view.setBackground(gradientDrawable);
+            view.setBackgroundResource(tabParam.backgroundColor);
+            //添加渐变颜色
+//            GradientDrawable gradientDrawable=new GradientDrawable();
+//            int colors[]={getContext().getResources().getColor(R.color.colorItems), R.color.tabcolor1};
+//            gradientDrawable.setColors(colors);
+//            gradientDrawable.setOrientation(GradientDrawable.Orientation.TOP_BOTTOM);
+//            view.setBackground(gradientDrawable);
         }
 
         if (tabParam.iconResId > 0) {

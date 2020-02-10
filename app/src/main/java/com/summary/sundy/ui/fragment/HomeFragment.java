@@ -22,6 +22,7 @@ import com.summary.sundy.ui.activity.DrawerLayoutActivity;
 import com.summary.sundy.ui.activity.EditTextStyleActivity;
 import com.summary.sundy.ui.activity.GuavaActivity;
 import com.summary.sundy.ui.activity.InputLayoutActivity;
+import com.summary.sundy.ui.activity.ItemTouchHelperActivity;
 import com.summary.sundy.ui.activity.NavigationActivity;
 import com.summary.sundy.ui.activity.PopupWindowActivity;
 import com.summary.sundy.ui.activity.ProgressActivity;
@@ -91,6 +92,7 @@ public class HomeFragment extends BaseFragment {
         widgetModels.add(new WidgetModel("SheetView","各种方式实现的底部弹窗", SheetViewActivity.class));
         widgetModels.add(new WidgetModel("Drawer","android侧滑的实现", DrawerLayoutActivity.class));
         widgetModels.add(new WidgetModel("地图切换","高德地图和google地图切换", SwitchMapActivity.class));
+        widgetModels.add(new WidgetModel("ItemTouchHelper","item拖动和位置交换", ItemTouchHelperActivity.class));
         return widgetModels;
     }
 

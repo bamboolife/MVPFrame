@@ -13,6 +13,7 @@ import com.summary.sundy.ui.activity.DrawerLayoutActivity;
 import com.summary.sundy.ui.activity.EditTextStyleActivity;
 import com.summary.sundy.ui.activity.GuavaActivity;
 import com.summary.sundy.ui.activity.InputLayoutActivity;
+import com.summary.sundy.ui.activity.ItemTouchHelperActivity;
 import com.summary.sundy.ui.activity.NavigationActivity;
 import com.summary.sundy.ui.activity.NavigationStyle2Activity;
 import com.summary.sundy.ui.activity.NavigationStyleActivity;
@@ -126,4 +127,7 @@ public abstract class AllActivitysModule {
 
     @ContributesAndroidInjector(modules =DrawerLayoutActivityModule.class)
     abstract DrawerLayoutActivity contributeDrawerLayoutActivityInjector();
+
+    @ContributesAndroidInjector(modules =ItemTouchHelperActivityModule.class)
+    abstract ItemTouchHelperActivity contributeItemTouchHelperActivityInjector();
 }
